@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Doctor Home Page</title>
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/signin.css" rel="stylesheet">
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <script type="text/javascript"></script>
+  </head>
+
+  <body>
+<div class="container">
+	<!-- BEGIN CONTENT -->
+	<h2 class="text-center">Doctor Home</h2>
+	
+	<form class="form-signin" role="form" method="POST" action="<?php echo $_SERVER['PHP_SELF']; ?>">
+		<h4 class="form-signin-heading text-center">Select a patient</h4>
+    <?php
+      $server = mysql_connect("cssgate.insttech.washington.edu;dbname=connorl2", "connorl2", "yandyu");
+      $db = mysql_select_db("connorl2", $server);
+      $query = mysql_quert("SELECT LastName, FirstName FROM Patients");
+      ?>
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th scope="col">Patient Name </th>
+        </tr>
+        <?php
+          while ($row = mysql_fetch_array($query)) {
+            echo "<tr>";
+              echo "<td>" .$row['userName']."</td>";
+              
+            echo "</tr>";
+        }
+        ?>
+      </thead>
+
+
+
+	</form>
+</div>
+  
+    
+
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
+  </body>
+</html>
