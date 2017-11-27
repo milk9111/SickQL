@@ -1,14 +1,14 @@
-USE<connorl2>
+USE connorl2;
 
 -- Create Patient table
-DROP TABLE IF EXISTS Patient
+DROP TABLE IF EXISTS Patient;
 CREATE TABLE Patient (
   email     VARCHAR(32) PRIMARY KEY,
   userName  VARCHAR(32) UNIQUE NOT NULL,
   password  CHAR(32) NOT NULL,
   height    FLOAT(6),
   weight    FLOAT(8),
-  age       int(3)
+  age       int
 );
 
 -- Insert User Patients
@@ -19,7 +19,7 @@ INSERT INTO Patient VALUES
 , ('valdezAutumn@yahoo.com', 'Valdez', 'PillarOfAutun', NULL, NULL, 25);
 
 -- Create Doctor table
-DROP TABLE IF EXISTS Doctor
+DROP TABLE IF EXISTS Doctor;
 CREATE TABLE Doctor (
   email     VARCHAR(32) PRIMARY KEY,
   userName  VARCHAR(32) UNIQUE NOT NULL,
@@ -32,23 +32,23 @@ INSERT INTO Doctor VALUES
 , ('iamguilty@gmail.com', 'Guilty Spark', '343forerunner');
 
 -- Create Table for Prescriptions
-DROP TABLE IF EXISTS Prescription
+DROP TABLE IF EXISTS Prescription;
 CREATE TABLE Prescription (
   presId        VARCHAR(32) PRIMARY KEY,
   namePre       VARCHAR(32) UNIQUE NOT NULL,
   dose          VARCHAR(32) NOT NULL,
   cost          FLOAT(6) NOT NULL,
-  frequency     INT(4) NOT NULL,
+  frequency     int NOT NULL,
   refillDate    VARCHAR(32) NOT NULL,
   manufacturer  VARCHAR(32),
-  active        INT(1)
+  active        int
 );
 
 -- Create table for multiway relationship for doctors and patients
-DROP TABLE IF EXISTS AssignTo
+DROP TABLE IF EXISTS AssignTo;
 CREATE TABLE AssignTo (
   patientEmail VARCHAR(32) NOT NULL,
   doctorEmail  VARCHAR(32) NOT NULL,
-  active       INT(1),
+  active       int,
   PRIMARY KEY(patientEmail, doctorEmail)
 );
