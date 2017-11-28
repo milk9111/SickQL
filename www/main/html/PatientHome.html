@@ -15,25 +15,88 @@
   <body>
 <div class="container">
 	<!-- BEGIN CONTENT -->
-	<h2 class="text-center">Doctor Home</h2>
-	
-	<form class="form-signin" role="form" method="POST" action="<?php echo $_SERVER['PHP_SELF']; ?>">
-		<h4 class="form-signin-heading text-center">Select a patient</h4>
+	<h2 class="text-center">Hello</h2>
+
+    <h4 class="form-signin-heading text-center">Your Information</h4>
+    <table class="table table-hover" id="patInfo">
+        <thead>
+        <tr>
+            <th scope="col">User Name</th>
+            <th scope="col">email</th>
+            <th scope="col">Height</th>
+            <th scope="col">Weight</th>
+            <th scope="col">Age</th>
+        </tr>
+        </thead>
+    </table>
+
+    <br>
+
+    <h4 class="form-signin-heading text-center">Your Prescriptions</h4>
+    <table class="table table-hover table-bordered" id="presInfo">
+        <thead>
+        <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Dose</th>
+            <th scope="col">Cost</th>
+            <th scope="col">Frequency</th>
+            <th scope="col">Refill Date</th>
+            <th scope="col">Manufactuerer</th>
+        </tr>
+        </thead>
+    </table>
+
+    <br>
+
+    <div class="row">
+        <div class="col-sm-4">
+            <h4 class="form-signin-heading text-center">Your Doctors</h4>
+            <table class="table table-hover table-bordered table-condensed table-sm text-center" id="patDocs">
+            <thead>
+                <tr>
+                    <th scope="col">Email</th>
+                    <th scope="col">Name</th>
+                </tr>
+            </thead>
+            </table>
+        </div>
+    </div>
+
+    <br>
+
+    <h4 class="form-signin-heading text-center">Add Doctors</h4>
+    <table class="table table-hover table-bordered" id="allDocs">
+        <thead>
+        <tr>
+            <th scope="col">Email</th>
+            <th scope="col">Name</th>
+            <th>Add Doctor</th>
+        </tr>
+        <tr>
+            <td scope="col">drHalsey@yahoo.com</td>
+            <td scope="col">Dr Halsey</td>
+            <td><button type="button" class="btn btn-default btn-sm" id="addDoctorBut">
+                <span class="glyphicon glyphicon-plus"></span> Add Doctor
+            </button></td>
+        </tr>
+        </thead>
+    </table>
+       <!-- <form class="form-signin" role="form" method="POST" action="<?php echo $_SERVER['PHP_SELF']; ?>">
+		<h4 class="form-signin-heading text-center">Prescriptions</h4>
     <table class="table table-hover">
       <thead>
         <tr>
-          <th scope="col">Last Name </th>
-          <th scope="col">First Name</th>
+          <th scope="col">Name</th>
+          <th scope="col">Dose</th>
+          <th scope="col">Cost</th>
+          <th scope="col">Frequency</th>
+          <th scope="col">Refill Date</th>
+          <th scope="col">Manufactuerer</th>
         </tr>
       </thead>
+    </table>
 
-
-
-	</form>
-</div>
-  
-    
-
+	</form> -->
 
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
