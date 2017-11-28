@@ -9,6 +9,8 @@
     <link href="../css/signin.css" rel="stylesheet">
     <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+      <script src="../js/jquery-3.2.1.min.js"></script>
+      <script src="../js/userHandling.js"></script>
   </head>
 
   <body>
@@ -16,22 +18,22 @@
 	<!-- BEGIN CONTENT -->
 	<h2 class="text-center">SickQL</h2>
 	
-	<form class="form-signin" role="form" method="POST" action="../php/signin.php">
+	<form class="form-signin" role="form" method="POST">
 		<h4 class="form-signin-heading text-center">Please sign in</h4>
-		<input type="text" class="form-control" placeholder="Username" name="username" required autofocus />
-		<input type="password" class="form-control" placeholder="Password" required name="pwd">
+		<input type="text" class="form-control" placeholder="Username" id="username" name="username" required autofocus /><span id="besideUname"></span>
+		<input type="password" class="form-control" placeholder="Password" id="pwd" required name="pwd"><span id="besidePsw"></span>
 		<?php echo $errors; ?>
-		<button class="btn btn-lg btn-primary btn-block" type="submit" name="login">
+		<button class="btn btn-lg btn-primary btn-block" type="submit" name="signin" onclick="login(form.username.value, form.pwd.value)">
 			Sign in
 		</button>
-    <button class="btn btn-lg btn-primary btn-block" type="button" name="register">
-      Register
-      <a href="register.html"></a>
-    </button>
+        <button class="btn btn-lg btn-primary btn-block" type="button" name="register">
+          Register
+          <a href="register.html"></a>
+        </button>
 	</form>
 </div>
-  
-    
+
+
 
 
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
