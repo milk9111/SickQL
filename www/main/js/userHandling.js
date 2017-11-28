@@ -6,26 +6,40 @@
  * If successful, this will move onto the next page, which is determined by role type.
  *
  * @param uname
- * @param psw
+ * @param pwd
  * @author Connor
  */
-function login(uname, psw) {
-    if (uname.length <= 32 && psw.length >= 5 && psw.length <= 32) {
+function login(uname, pwd) {
+    if (uname.length <= 32 && pwd.length >= 5 && pwd.length <= 32) {
+        var xhttp = new XMLHttpRequest();
+        xhttp.open("GET", "http://cssgate.insttech.washington.edu/~connorl2/home/main/php/login.php?username="+uname+"&password="+pwd, false);
+        xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 
+        xhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                alert("in here");
+                //alert(this.responseText);
+                var res = this.response;
+                alert(this.responseText + " is the responseText");
+                var result = JSON.parse(res);
+                alert(result);
+            }
+        }
+
+        xhttp.send();
+        //console.log(result);
+        //var obj = JSON.parse(result);
+        //console.log("message: " + obj['message']);
     } else {
         if (uname.length > 32) {
-            console.log("Username too big");
             alert("Username must be less than 32 characters");
-            //$('#besideUname').innerHTML = "Username must be less than 32 characters";
-        } else if (psw.length < 5 || psw.length > 32) {
-            console.log("Password not right size: " + psw.length);
+        } else if (pwd.length < 5 || pwd.length > 32) {
             alert("Password must be between 5 and 32 characters");
-            //$('#besidePsw').innerText = "Password must be between 5 and 32 characters";
         }
     }
 }
 
 
-function register (uname, psw, confPsw) {
+function register (uname, pwd, confPwd) {
 
 }
