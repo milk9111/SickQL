@@ -13,40 +13,56 @@
   </head>
 
   <body>
-<div class="container">
-	<!-- BEGIN CONTENT -->
-	<h2 class="text-center">Doctor Home</h2>
+    <div class="container">
+
+	<h2 class="text-center">Welcome Dr</h2>
 	
-	<form class="form-signin" role="form" method="POST" action="<?php echo $_SERVER['PHP_SELF']; ?>">
+	<!--<form class="form-signin" role="form" method="POST" action="<?php echo $_SERVER['PHP_SELF']; ?>">
 		<h4 class="form-signin-heading text-center">Select a patient</h4>
     <?php
       $server = mysql_connect("cssgate.insttech.washington.edu;dbname=connorl2", "connorl2", "yandyu");
       $db = mysql_select_db("connorl2", $server);
       $query = mysql_quert("SELECT LastName, FirstName FROM Patients");
-      ?>
-    <table class="table table-hover">
-        <tr>
-          <th scope="row">Patient Name</th>
-            <th scope="row">Height</th>
-            <th scope="row">Weight</th>
-            <th scope="row">Age</th>
+      ?> -->
 
+    <h4 class="form-signin-heading text-center">Your Patients</h4>
+
+    <table class="table table-hover table-bordered">
+        <tr>
+          <th>Patient Name</th>
+            <th>Height</th>
+            <th>Weight</th>
+            <th>Age</th>
+            <th>Add Prescription</th>
+            <th>Update Patient</th>
+            <th>Remove Patient</th>
         </tr>
+
+        <!-- This is just an example of what it should look like, put code to fill from db -->
         <tr>
             <td>brandon</td>
             <td>5.8</td>
             <td>168</td>
             <td>20</td>
+            <td><button type="button" class="btn btn-default btn-sm" id="addPresBut">
+                <span class="glyphicon glyphicon-plus"></span> Add Prescription
+            </button></td>
+            <td><button type="button" class="btn btn-default btn-sm" id="updateBut">
+                <span class="glyphicon glyphicon-plus"></span> Update Patient
+            </button></td>
+            <td><button type="button" class="btn btn-default btn-sm" id="removeBut">
+                <span class="glyphicon glyphicon-minus"></span> Remove Patient
+            </button></td>
         </tr>
 
-        <?php
+        <!-- <?php
           while ($row = mysql_fetch_array($query)) {
             echo "<tr>";
               echo "<td>" .$row['userName']."</td>";
               
             echo "</tr>";
         }
-        ?>
+        ?> -->
     </table>
 
 
