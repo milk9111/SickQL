@@ -8,28 +8,30 @@ CREATE TABLE Patient (
   password  CHAR(32) NOT NULL,
   height    FLOAT(6),
   weight    FLOAT(8),
-  age       int
+  age       int,
+  role      VARCHAR(10) NOT NULL
 );
 
 -- Insert User Patients
 INSERT INTO Patient VALUES
-  ('john117@gmail.com', 'John Chief', 'Halo07', 6.11, 220.25, 30)
-, ('cortona@hotmail.com', 'Cortona', 'IamHuman', 5.3, 120.5, 7)
-, ('johnsonSgt@yahoo.com', 'Avery Johnson', 'SendMeOutWithABang', NULL, NULL, 60)
-, ('valdezAutumn@yahoo.com', 'Valdez', 'PillarOfAutun', NULL, NULL, 25);
+  ('john117@gmail.com', 'John Chief', 'Halo07', 6.11, 220.25, 30, 'patient')
+, ('cortona@hotmail.com', 'Cortona', 'IamHuman', 5.3, 120.5, 7, 'patient')
+, ('johnsonSgt@yahoo.com', 'Avery Johnson', 'SendMeOutWithABang', NULL, NULL, 60, 'patient')
+, ('valdezAutumn@yahoo.com', 'Valdez', 'PillarOfAutun', NULL, NULL, 25, 'patient');
 
 -- Create Doctor table
 DROP TABLE IF EXISTS Doctor;
 CREATE TABLE Doctor (
   email     VARCHAR(32) PRIMARY KEY,
   userName  VARCHAR(32) UNIQUE NOT NULL,
-  password  VARCHAR(32) NOT NULL
+  password  VARCHAR(32) NOT NULL,
+  role      VARCHAR(10) NOT NULL
 );
 
 -- Add Doctors to table
 INSERT INTO Doctor VALUES
-  ('drHalsey@unscONI.gov', 'Catherine Elizabeth Halsey', 'Lucky7')
-, ('iamguilty@gmail.com', 'Guilty Spark', '343forerunner');
+  ('drHalsey@unscONI.gov', 'Catherine Elizabeth Halsey', 'Lucky7', 'doctor')
+, ('iamguilty@gmail.com', 'Guilty Spark', '343forerunner', 'doctor');
 
 -- Create Table for Prescriptions
 DROP TABLE IF EXISTS Prescription;
