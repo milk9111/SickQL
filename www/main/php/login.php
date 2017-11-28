@@ -3,9 +3,13 @@
     error_reporting(E_ALL);
 
     //Connect to the Database
-    $dsn = 'mysql:host=cssgate.insttech.washington.edu;dbname=connorl2';
+    /*$dsn = 'mysql:host=cssgate.insttech.washington.edu;dbname=connorl2';
     $username = 'connorl2';
-    $password = 'yandyu';
+    $password = 'yandyu';*/
+
+    $dsn = 'mysql:host=localhost;dbname=connorl2';
+    $username = 'root';
+    $password = '';
 
     $uname = $_GET['username'];
     $pwd = $_GET['password'];
@@ -19,13 +23,21 @@
         $currPwd = $user_query->fetchAll(PDO::FETCH_ASSOC);
         if ($currPwd) {
             if ($currPwd[0]["password"] == $pwd) {
-                $result = array("code"=>100, "message"=>"Sign in successful");
+                $result = array("code"=>100, "message"=>"Sign in successful", "role"=>"Doctor");
 
             } else {
                 $result = array("code"=>200, "message"=>"Unable to sign in. Password invalid");
             }
         } else {
-            $result = array("code"=>200, "message"=>"Unable to sign in. Username not found");
+            $select_sql = "SELECT password FROM `Patient` WHERE email = '" . $uname. "'";
+            $user_query = $db->query($select_sql);
+
+            $currPwd = $user_query->fetchAll(PDO::FETCH_ASSOC);
+            if($currPwd) {
+                $result = array("code"=>100, "message"=>"Unable to sign in. Username not found");
+            } else {
+                $result = array("code"=>200, "message"=>"Unable to sign in. Username not found");
+            }
         }
         echo json_encode($result);
         $db = null;

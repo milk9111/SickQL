@@ -20,15 +20,14 @@
 	
 	<form class="form-signin" role="form" method="POST">
 		<h4 class="form-signin-heading text-center">Please sign in</h4>
-		<input type="text" class="form-control" placeholder="Username" id="username" name="username" required autofocus /><span id="besideUname"></span>
-		<input type="password" class="form-control" placeholder="Password" id="pwd" required name="pwd"><span id="besidePsw"></span>
+		<input type="text" class="form-control" placeholder="Username" id="username" name="username" required autofocus />
+		<input type="password" class="form-control" placeholder="Password" id="pwd" required name="pwd">
 		<?php echo $errors; ?>
-		<button class="btn btn-lg btn-primary btn-block" type="submit" name="signin" onclick="login(form.username.value, form.pwd.value)">
+		<button class="btn btn-lg btn-primary btn-block" type="button" name="signin" onclick="login(form.username.value, form.pwd.value)">
 			Sign in
 		</button>
-        <button class="btn btn-lg btn-primary btn-block" type="button" name="register">
+        <button class="btn btn-lg btn-primary btn-block" type="button" name="register" onclick="window.location.href='register.html';">
           Register
-          <a href="register.html"></a>
         </button>
 	</form>
 </div>
