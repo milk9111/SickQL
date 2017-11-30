@@ -6,17 +6,17 @@ CREATE TABLE Patient (
   username  VARCHAR(32) PRIMARY KEY,
   fullname  VARCHAR(32) NOT NULL,
   password  VARCHAR(32) NOT NULL,
-  height    FLOAT(6),
-  weight    FLOAT(8),
-  age       int
+  height    FLOAT(6) NOT NULL,
+  weight    FLOAT(8) NOT NULL,
+  age       int NOT NULL
 );
 
 -- Insert User Patients
 INSERT INTO Patient VALUES
   ('john117@gmail.com', 'John Chief', 'Halo07', 6.11, 220.25, 30)
 , ('cortona@hotmail.com', 'Cortona', 'IamHuman', 5.3, 120.5, 7)
-, ('johnsonSgt@yahoo.com', 'Avery Johnson', 'SendMeOutWithABang', NULL, NULL, 60)
-, ('valdezAutumn@yahoo.com', 'Valdez', 'PillarOfAutun', NULL, NULL, 25);
+, ('johnsonSgt@yahoo.com', 'Avery Johnson', 'SendMeOutWithABang', 0, 0, 60)
+, ('valdezAutumn@yahoo.com', 'Valdez', 'PillarOfAutun', 0, 0, 25);
 
 -- Create Doctor table
 DROP TABLE IF EXISTS Doctor;

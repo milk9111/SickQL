@@ -28,19 +28,21 @@
 
     <h4 class="form-signin-heading text-center">Your Patients</h4>
 
-    <table class="table table-hover table-bordered">
-        <tr>
-          <th>Patient Name</th>
-            <th>Height</th>
-            <th>Weight</th>
-            <th>Age</th>
-            <th>Add Prescription</th>
-            <th>Update Patient</th>
-            <th>Remove Patient</th>
-        </tr>
+    <table class="table table-hover table-bordered" id="patients_table">
 
+      <tbody>
+      <tr>
+        <th>Patient Name</th>
+        <th>Height</th>
+        <th>Weight</th>
+        <th>Age</th>
+        <th>Add Prescription</th>
+        <th>Update Patient</th>
+        <th>Remove Patient</th>
+      </tr>
+      </tbody>
         <!-- This is just an example of what it should look like, put code to fill from db -->
-        <tr>
+        <!--<tr>
             <td>brandon</td>
             <td>5.8</td>
             <td>168</td>
@@ -54,7 +56,7 @@
             <td><button type="button" class="btn btn-default btn-sm" id="removeBut">
                 <span class="glyphicon glyphicon-minus"></span> Remove Patient
             </button></td>
-        </tr>
+        </tr>-->
 
         <!-- <?php
           while ($row = mysql_fetch_array($query)) {

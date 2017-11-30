@@ -21,7 +21,7 @@ function login(uname, pwd) {
             if (this.readyState === 4 && this.status === 200) {
                 var res = this.response;
                 var result = JSON.parse(res);
-                alert(result['message']);
+
                 if (result['code'] == 100) {
                     if (result['role'] === "Doctor") {
                         window.location.href = "../html/DrHome.html";
@@ -32,6 +32,8 @@ function login(uname, pwd) {
                         document.cookie="username="+uname+"&fullname="+result['fullname'];
                         //return false;
                     }
+                } else {
+                    alert(result['message']);
                 }
             }
         }
@@ -82,7 +84,7 @@ function register (uname, fullname, pwd, confPwd) {
             if (this.readyState === 4 && this.status === 200) {
                 var res = this.response;
                 var result = JSON.parse(res);
-                alert(result['message']);
+
                 if (result['code'] == 100) {
                     if (result['role'] === "Doctor") {
                         window.location.href = "../html/DrHome.html";
@@ -93,6 +95,8 @@ function register (uname, fullname, pwd, confPwd) {
                         document.cookie="username="+uname+"&fullname="+fullname;
                         //return false;
                     }
+                } else {
+                    alert(result['message']);
                 }
             }
         }
