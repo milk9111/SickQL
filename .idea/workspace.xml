@@ -2,13 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="52154059-6798-4369-8dd6-1b782509887e" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/main/php/getPatientsForDoctor.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/main/php/removePatient.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/main/php/updatePatient.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.xml" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/main/build_database_sickQL.sql" afterPath="$PROJECT_DIR$/www/main/build_database_sickQL.sql" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/main/html/DrHome.html" afterPath="$PROJECT_DIR$/www/main/html/DrHome.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/main/html/home.html" afterPath="$PROJECT_DIR$/www/main/html/home.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/main/js/drHome.js" afterPath="$PROJECT_DIR$/www/main/js/drHome.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/main/js/userHandling.js" afterPath="$PROJECT_DIR$/www/main/js/userHandling.js" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -186,11 +184,6 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
-  <component name="ProjectFrameBounds" extendedState="7">
-    <option name="x" value="-7" />
-    <option name="width" value="814" />
-    <option name="height" value="867" />
-  </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
@@ -385,15 +378,15 @@
       <updated>1511823739789</updated>
       <workItem from="1511823741508" duration="6604000" />
       <workItem from="1511847008480" duration="9241000" />
-      <workItem from="1512065288281" duration="18453000" />
+      <workItem from="1512065288281" duration="18952000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="34298000" />
+    <option name="totallyTimeSpent" value="34797000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1616" height="876" extended-state="7" />
+    <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
