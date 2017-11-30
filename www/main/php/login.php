@@ -19,25 +19,25 @@
         $db = new PDO($dsn, $username, $password);
 
         //this checks if the email is found within the Doctor table
-        $select_sql = "SELECT password FROM `Doctor` WHERE username = '" . $uname. "'";
+        $select_sql = "SELECT password, fullname FROM `Doctor` WHERE username = '" . $uname. "'";
         $user_query = $db->query($select_sql);
 
         $currPwd = $user_query->fetchAll(PDO::FETCH_ASSOC);
         if ($currPwd) {
             if ($currPwd[0]["password"] == $pwd) { //check password for validity
-                $result = array("code"=>100, "message"=>"Sign in successful", "role"=>"Doctor");
+                $result = array("code"=>100, "message"=>"Sign in successful", "role"=>"Doctor", "fullname"=>"".$currPwd[0]['fullname']);
             } else { //password was not valid, return a JSON with error code 200 and message to display to user
                 $result = array("code"=>200, "message"=>"Unable to sign in. Password invalid");
             }
         } else {
             //if it isn't in Doctor, then look in Patient
-            $select_sql = "SELECT password FROM `Patient` WHERE username = '" . $uname. "'";
+            $select_sql = "SELECT password, fullname FROM `Patient` WHERE username = '" . $uname. "'";
             $user_query = $db->query($select_sql);
 
             $currPwd = $user_query->fetchAll(PDO::FETCH_ASSOC);
             if($currPwd) {
                 if ($currPwd[0]["password"] == $pwd) {
-                    $result = array("code"=>100, "message"=>"Sign in successful", "role"=>"Patient");
+                    $result = array("code"=>100, "message"=>"Sign in successful", "role"=>"Patient", "fullname"=>"".$currPwd[0]['fullname']);
                 } else {
                     $result = array("code"=>200, "message"=>"Unable to sign in. Password invalid");
                 }

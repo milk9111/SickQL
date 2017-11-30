@@ -2,14 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="52154059-6798-4369-8dd6-1b782509887e" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/main/js/drHome.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/main/build_database_sickQL.sql" afterPath="$PROJECT_DIR$/www/main/build_database_sickQL.sql" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/main/html/DrHome.html" afterPath="$PROJECT_DIR$/www/main/html/DrHome.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/main/html/register.html" afterPath="$PROJECT_DIR$/www/main/html/register.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/main/js/drHome.js" afterPath="$PROJECT_DIR$/www/main/js/drHome.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/main/js/userHandling.js" afterPath="$PROJECT_DIR$/www/main/js/userHandling.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/main/php/login.php" afterPath="$PROJECT_DIR$/www/main/php/login.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/main/php/register.php" afterPath="$PROJECT_DIR$/www/main/php/register.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -56,28 +53,28 @@
       <file leaf-file-name="register.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/www/main/html/register.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="19" column="0" lean-forward="false" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+            <state relative-caret-position="187">
+              <caret line="11" column="4" lean-forward="true" selection-start-line="11" selection-start-column="4" selection-end-line="11" selection-end-column="53" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="userHandling.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="userHandling.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/www/main/js/userHandling.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="78" column="47" lean-forward="false" selection-start-line="78" selection-start-column="47" selection-end-line="78" selection-end-column="47" />
+            <state relative-caret-position="272">
+              <caret line="25" column="54" lean-forward="true" selection-start-line="25" selection-start-column="54" selection-end-line="25" selection-end-column="54" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="drHome.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="drHome.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/www/main/js/drHome.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="68">
+              <caret line="4" column="24" lean-forward="false" selection-start-line="4" selection-start-column="24" selection-end-line="4" selection-end-column="24" />
               <folding />
             </state>
           </provider>
@@ -86,56 +83,9 @@
       <file leaf-file-name="DrHome.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/www/main/html/DrHome.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="12" column="9" lean-forward="true" selection-start-line="12" selection-start-column="9" selection-end-line="12" selection-end-column="9" />
+            <state relative-caret-position="187">
+              <caret line="11" column="55" lean-forward="false" selection-start-line="11" selection-start-column="55" selection-end-line="11" selection-end-column="55" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="register.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/www/main/php/register.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="345">
-              <caret line="60" column="31" lean-forward="false" selection-start-line="60" selection-start-column="31" selection-end-line="60" selection-end-column="31" />
-              <folding>
-                <marker date="1512072066317" expanded="true" signature="617:680" ph="SELECT passw... Doctor" />
-                <marker date="1512072066317" expanded="true" signature="745:794" ph="SELECT passw... Patient" />
-                <marker date="1512072066317" expanded="true" signature="745:809" ph="SELECT passw... Patient" />
-                <marker date="1512072066317" expanded="true" signature="745:810" ph="SELECT passw... Patient" />
-                <marker date="1512072066317" expanded="true" signature="866:887" ph="SELECT passw... " />
-                <marker date="1512072066317" expanded="true" signature="866:908" ph="SELECT passw... ${$type}" />
-                <marker date="1512072066317" expanded="true" signature="866:909" ph="SELECT passw... " />
-                <marker date="1512072066317" expanded="true" signature="866:920" ph="SELECT passw... ${$type}" />
-                <marker date="1512072066317" expanded="true" signature="866:923" ph="SELECT passw... ${$type}" />
-                <marker date="1512072066317" expanded="true" signature="866:924" ph="SELECT passw... ${$type}" />
-                <marker date="1512072066317" expanded="true" signature="1549:1613" ph="SELECT passw... Patient" />
-                <marker date="1512072066317" expanded="true" signature="1660:1723" ph="SELECT passw... Doctor" />
-                <marker date="1512072066317" expanded="true" signature="2136:2216" ph="INSERT INTO ${$type}... " />
-                <marker date="1512072066317" expanded="true" signature="2406:2424" ph="INSERT INTO `FROM `... " />
-                <marker date="1512072066317" expanded="true" signature="2406:2433" ph="INSERT INTO `${$type}`... " />
-                <marker date="1512072066317" expanded="true" signature="2406:2451" ph="INSERT INTO `${$type}`... " />
-                <marker date="1512072066317" expanded="true" signature="2406:2472" ph="INSERT INTO `${$type}`... " />
-                <marker date="1512072066317" expanded="true" signature="2406:2499" ph="INSERT INTO `${$type}`... " />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="patient" pinned="false" current-in-tab="false">
-        <entry file="das://table:/c2a7daf1/6249d010-2dc7-4517-84ac-8ee8b4053262/connorl2.patient">
-          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-            <state>
-              <filtering enabled="true" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="doctor" pinned="false" current-in-tab="false">
-        <entry file="das://table:/c2a7daf1/6249d010-2dc7-4517-84ac-8ee8b4053262/connorl2.doctor">
-          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-            <state>
-              <filtering enabled="true" />
             </state>
           </provider>
         </entry>
@@ -143,29 +93,11 @@
       <file leaf-file-name="login.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/www/main/php/login.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="38" column="54" lean-forward="false" selection-start-line="38" selection-start-column="54" selection-end-line="38" selection-end-column="54" />
+            <state relative-caret-position="119">
+              <caret line="22" column="46" lean-forward="true" selection-start-line="22" selection-start-column="46" selection-end-line="22" selection-end-column="46" />
               <folding>
-                <marker date="1512071166550" expanded="true" signature="593:655" ph="SELECT passw... Doctor" />
-                <marker date="1512071166550" expanded="true" signature="1292:1355" ph="SELECT passw... Patient" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="build_database_sickQL.sql" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/www/main/build_database_sickQL.sql">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="232">
-              <caret line="45" column="0" lean-forward="false" selection-start-line="45" selection-start-column="0" selection-end-line="45" selection-end-column="0" />
-              <folding>
-                <marker date="1512069285245" expanded="true" signature="39:67" ph="DROP TABLE I... " />
-                <marker date="1512069285245" expanded="true" signature="69:256" ph="CREATE TABLE... Patient" />
-                <marker date="1512069285245" expanded="true" signature="954:955" ph="INSERT INTO Doctor... " />
-                <marker date="1512069285245" expanded="true" signature="992:1025" ph="DROP TABLE I... " />
-                <marker date="1512069285245" expanded="true" signature="1027:1325" ph="CREATE TABLE... Prescription" />
-                <marker date="1512069285245" expanded="true" signature="1395:1424" ph="DROP TABLE I... " />
-                <marker date="1512069285245" expanded="true" signature="1426:1586" ph="CREATE TABLE... AssignTo" />
+                <marker date="1512076510881" expanded="true" signature="593:665" ph="SELECT passw... Doctor" />
+                <marker date="1512076510881" expanded="true" signature="1342:1415" ph="SELECT passw... Patient" />
               </folding>
             </state>
           </provider>
@@ -174,8 +106,8 @@
       <file leaf-file-name="console.sql" pinned="false" current-in-tab="false">
         <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/6249d010-2dc7-4517-84ac-8ee8b4053262/console.sql">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="68">
+              <caret line="4" column="37" lean-forward="false" selection-start-line="4" selection-start-column="37" selection-end-line="4" selection-end-column="37" />
               <folding />
             </state>
           </provider>
@@ -201,16 +133,17 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/149b5eeb-bd46-4fec-9a19-4b5631b22491/console.sql" />
         <option value="$PROJECT_DIR$/www/main/html/home.html" />
         <option value="$PROJECT_DIR$/www/main/html/register.html" />
-        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/6249d010-2dc7-4517-84ac-8ee8b4053262/console.sql" />
-        <option value="$PROJECT_DIR$/www/main/build_database_sickQL.sql" />
-        <option value="$PROJECT_DIR$/www/main/php/login.php" />
         <option value="$PROJECT_DIR$/www/main/php/register.php" />
-        <option value="$PROJECT_DIR$/www/main/js/userHandling.js" />
+        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/6249d010-2dc7-4517-84ac-8ee8b4053262/console_1.sql" />
+        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/149b5eeb-bd46-4fec-9a19-4b5631b22491/console.sql" />
+        <option value="$PROJECT_DIR$/www/main/build_database_sickQL.sql" />
+        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/6249d010-2dc7-4517-84ac-8ee8b4053262/console.sql" />
         <option value="$PROJECT_DIR$/www/main/html/DrHome.html" />
         <option value="$PROJECT_DIR$/www/main/js/drHome.js" />
+        <option value="$PROJECT_DIR$/www/main/php/login.php" />
+        <option value="$PROJECT_DIR$/www/main/js/userHandling.js" />
       </list>
     </option>
   </component>
@@ -420,12 +353,12 @@
       <updated>1511823739789</updated>
       <workItem from="1511823741508" duration="6604000" />
       <workItem from="1511847008480" duration="9241000" />
-      <workItem from="1512065288281" duration="7558000" />
+      <workItem from="1512065288281" duration="10973000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="23403000" />
+    <option name="totallyTimeSpent" value="26818000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
@@ -438,14 +371,14 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32974428" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32974428" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32974428" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33378747" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="true" internal_type="SLIDING" type="SLIDING" visible="false" show_stripe_button="true" weight="0.12210797" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19151671" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33421752" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.15809768" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -542,8 +475,8 @@
         <state relative-caret-position="561">
           <caret line="33" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="50" selection-end-column="0" />
           <folding>
-            <marker date="1512071166550" expanded="true" signature="593:655" ph="SELECT passw... Doctor" />
-            <marker date="1512071166550" expanded="true" signature="1292:1355" ph="SELECT passw... Patient" />
+            <marker date="1512076510881" expanded="true" signature="593:665" ph="SELECT passw... Doctor" />
+            <marker date="1512076510881" expanded="true" signature="1342:1415" ph="SELECT passw... Patient" />
           </folding>
         </state>
       </provider>
@@ -576,6 +509,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="9" lean-forward="false" selection-start-line="0" selection-start-column="9" selection-end-line="0" selection-end-column="9" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -590,17 +524,14 @@
     <entry file="file://$PROJECT_DIR$/www/main/html/DrHome.php" />
     <entry file="das://table:/af6279fa/149b5eeb-bd46-4fec-9a19-4b5631b22491/connorl2.Doctor" />
     <entry file="das://table:/af6279fa/149b5eeb-bd46-4fec-9a19-4b5631b22491/connorl2.Patient" />
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/149b5eeb-bd46-4fec-9a19-4b5631b22491/console.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="9" lean-forward="false" selection-start-line="0" selection-start-column="9" selection-end-line="0" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/www/main/php/DrHome.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1511846944329" expanded="true" signature="366:527" ph="UPDATE User " />
+            <marker date="1511846944329" expanded="true" signature="1026:1112" ph="SELECT useri... User" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -612,53 +543,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/6249d010-2dc7-4517-84ac-8ee8b4053262/console.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/build_database_studreg.sql">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
           <caret line="5" column="21" lean-forward="true" selection-start-line="5" selection-start-column="21" selection-end-line="5" selection-end-column="21" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/www/main/build_database_sickQL.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="232">
-          <caret line="45" column="0" lean-forward="false" selection-start-line="45" selection-start-column="0" selection-end-line="45" selection-end-column="0" />
-          <folding>
-            <marker date="1512069285245" expanded="true" signature="39:67" ph="DROP TABLE I... " />
-            <marker date="1512069285245" expanded="true" signature="69:256" ph="CREATE TABLE... Patient" />
-            <marker date="1512069285245" expanded="true" signature="954:955" ph="INSERT INTO Doctor... " />
-            <marker date="1512069285245" expanded="true" signature="992:1025" ph="DROP TABLE I... " />
-            <marker date="1512069285245" expanded="true" signature="1027:1325" ph="CREATE TABLE... Prescription" />
-            <marker date="1512069285245" expanded="true" signature="1395:1424" ph="DROP TABLE I... " />
-            <marker date="1512069285245" expanded="true" signature="1426:1586" ph="CREATE TABLE... AssignTo" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/www/main/php/login.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="38" column="54" lean-forward="false" selection-start-line="38" selection-start-column="54" selection-end-line="38" selection-end-column="54" />
-          <folding>
-            <marker date="1512071166550" expanded="true" signature="593:655" ph="SELECT passw... Doctor" />
-            <marker date="1512071166550" expanded="true" signature="1292:1355" ph="SELECT passw... Patient" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://table:/c2a7daf1/6249d010-2dc7-4517-84ac-8ee8b4053262/connorl2.patient">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
         </state>
       </provider>
     </entry>
@@ -689,7 +578,61 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/6249d010-2dc7-4517-84ac-8ee8b4053262/console_1.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="2" lean-forward="false" selection-start-line="6" selection-start-column="2" selection-end-line="6" selection-end-column="2" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/149b5eeb-bd46-4fec-9a19-4b5631b22491/console.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="2" lean-forward="true" selection-start-line="6" selection-start-column="2" selection-end-line="6" selection-end-column="2" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://table:/c2a7daf1/6249d010-2dc7-4517-84ac-8ee8b4053262/connorl2.patient">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/main/build_database_sickQL.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="58" column="0" lean-forward="false" selection-start-line="58" selection-start-column="0" selection-end-line="62" selection-end-column="37" />
+          <folding>
+            <marker date="1512074971719" expanded="true" signature="39:67" ph="DROP TABLE I... " />
+            <marker date="1512074971719" expanded="true" signature="69:256" ph="CREATE TABLE... Patient" />
+            <marker date="1512074971719" expanded="true" signature="986:987" ph="INSERT INTO Doctor... " />
+            <marker date="1512074971719" expanded="true" signature="1024:1057" ph="DROP TABLE I... " />
+            <marker date="1512074971719" expanded="true" signature="1059:1357" ph="CREATE TABLE... Prescription" />
+            <marker date="1512074971719" expanded="true" signature="1427:1456" ph="DROP TABLE I... " />
+            <marker date="1512074971719" expanded="true" signature="1458:1629" ph="CREATE TABLE... AssignTo" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="das://table:/c2a7daf1/6249d010-2dc7-4517-84ac-8ee8b4053262/connorl2.doctor">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/6249d010-2dc7-4517-84ac-8ee8b4053262/console.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="37" lean-forward="false" selection-start-line="4" selection-start-column="37" selection-end-line="4" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://table:/c2a7daf1/6249d010-2dc7-4517-84ac-8ee8b4053262/connorl2.assignto">
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
           <filtering enabled="true" />
@@ -698,32 +641,43 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/www/main/html/register.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="19" column="0" lean-forward="false" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+        <state relative-caret-position="187">
+          <caret line="11" column="4" lean-forward="true" selection-start-line="11" selection-start-column="4" selection-end-line="11" selection-end-column="53" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/www/main/html/DrHome.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="9" lean-forward="true" selection-start-line="12" selection-start-column="9" selection-end-line="12" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/www/main/js/userHandling.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="78" column="47" lean-forward="false" selection-start-line="78" selection-start-column="47" selection-end-line="78" selection-end-column="47" />
+        <state relative-caret-position="187">
+          <caret line="11" column="55" lean-forward="false" selection-start-line="11" selection-start-column="55" selection-end-line="11" selection-end-column="55" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/www/main/js/drHome.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="68">
+          <caret line="4" column="24" lean-forward="false" selection-start-line="4" selection-start-column="24" selection-end-line="4" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/main/php/login.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="22" column="46" lean-forward="true" selection-start-line="22" selection-start-column="46" selection-end-line="22" selection-end-column="46" />
+          <folding>
+            <marker date="1512076510881" expanded="true" signature="593:665" ph="SELECT passw... Doctor" />
+            <marker date="1512076510881" expanded="true" signature="1342:1415" ph="SELECT passw... Patient" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/main/js/userHandling.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="25" column="54" lean-forward="true" selection-start-line="25" selection-start-column="54" selection-end-line="25" selection-end-column="54" />
           <folding />
         </state>
       </provider>

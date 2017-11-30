@@ -25,10 +25,12 @@ function login(uname, pwd) {
                 if (result['code'] == 100) {
                     if (result['role'] === "Doctor") {
                         window.location.href = "../html/DrHome.html";
-                        return false;
+                        document.cookie="username="+uname+"&fullname="+result['fullname'];
+                        //return false;
                     } else {
                         window.location.href = "../html/PatientHome.html";
-                        return false;
+                        document.cookie="username="+uname+"&fullname="+result['fullname'];
+                        //return false;
                     }
                 }
             }
@@ -83,11 +85,13 @@ function register (uname, fullname, pwd, confPwd) {
                 alert(result['message']);
                 if (result['code'] == 100) {
                     if (result['role'] === "Doctor") {
-                        window.location.href = "../html/DrHome.html?username="+uname+"&fullname="+fullname;
-                        return false;
+                        window.location.href = "../html/DrHome.html";
+                        document.cookie="username="+uname+"&fullname="+fullname;
+                        //return false;
                     } else {
-                        window.location.href = "../html/PatientHome.html?username="+uname+"&fullname="+fullname;
-                        return false;
+                        window.location.href = "../html/PatientHome.html";
+                        document.cookie="username="+uname+"&fullname="+fullname;
+                        //return false;
                     }
                 }
             }

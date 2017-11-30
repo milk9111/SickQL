@@ -28,7 +28,8 @@ CREATE TABLE Doctor (
 
 -- Add Doctors to table
 INSERT INTO Doctor VALUES
-  ('drHalsey@unscONI.gov', 'Catherine Elizabeth Halsey', 'Lucky7')
+  ('connor', 'Connor', 'tests')
+, ('drHalsey@unscONI.gov', 'Catherine Elizabeth Halsey', 'Lucky7')
 , ('iamguilty@gmail.com', 'Guilty Spark', '343forerunner');
 
 -- Create Table for Prescriptions
@@ -47,8 +48,16 @@ CREATE TABLE Prescription (
 -- Create table for multiway relationship for doctors and patients
 DROP TABLE IF EXISTS AssignTo;
 CREATE TABLE AssignTo (
-  patientEmail VARCHAR(32) NOT NULL,
-  doctorEmail  VARCHAR(32) NOT NULL,
+  patientUsername VARCHAR(32) NOT NULL,
+  doctorUsername VARCHAR(32) NOT NULL,
   active       int,
-  PRIMARY KEY(patientEmail, doctorEmail)
+  PRIMARY KEY(patientUsername, doctorUsername)
 );
+
+
+-- Add pairs
+INSERT INTO AssignTo VALUES
+  ('cortona@hotmail.com', 'drHalsey@unscONI.gov', 1),
+  ('cortona@hotmail.com', 'iamguilty@gmail.com', 1),
+  ('valdezAutumn@yahoo.com', 'iamguilty@gmail.com', 1),
+  ('john117@gmail.com', 'connor', 1);
