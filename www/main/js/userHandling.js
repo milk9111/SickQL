@@ -14,30 +14,32 @@ function login(uname, pwd) {
         var xhttp = new XMLHttpRequest();
         //xhttp.open("GET", "http://cssgate.insttech.washington.edu/~connorl2/home/main/php/login.php?username="+uname+"&password="+pwd, false);
         //xhttp.open("GET", "localhost/SickQL/www/main/php/login.php?username="+uname+"&password="+pwd, false);
-        xhttp.open("GET", "../php/login.php?username="+uname+"&password="+pwd, false);
+        xhttp.open("GET", "../php/login.php?username="+uname+"&password="+pwd, true);
         xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 
         xhttp.onreadystatechange = function() {
             if (this.readyState === 4 && this.status === 200) {
                 var res = this.response;
                 var result = JSON.parse(res);
-                alert(result['message'] + "\n" + result['role']);
-                if (result['role'] === "Doctor") {
-                    alert("in here");
-                    window.location.href = "../html/DrHome.html";
-                    return false;
-                } else {
-                    window.location.href = "../html/PatientHome.html";
-                    return false;
+                alert(result['message']);
+                if (result['code'] == 100) {
+                    if (result['role'] === "Doctor") {
+                        window.location.href = "../html/DrHome.html";
+                        return false;
+                    } else {
+                        window.location.href = "../html/PatientHome.html";
+                        return false;
+                    }
                 }
             }
         }
 
         xhttp.send();
     } else {
-        if (uname.length > 32) {
-            alert("Username must be less than 32 characters");
-        } else if (pwd.length < 5 || pwd.length > 32) {
+        if (uname.length > 32 || uname.length < 5) {
+            alert("Username must be between 5 and 32 characters");
+        }
+        if (pwd.length < 5 || pwd.length > 32) {
             alert("Password must be between 5 and 32 characters");
         }
     }
@@ -59,34 +61,42 @@ function login(uname, pwd) {
  * @author Connor
  */
 function register (uname, fullname, pwd, confPwd) {
-    var type = $('button[name="role"].active').val();
-    alert(type);
-    if (uname.length <= 32 && pwd.length >= 5 && pwd.length <= 32 && pwd === confPwd
+    var type = $("input[name='type']:checked").val();
+
+    /*
+        This checks for correctness of the values. Right now it only looks to make
+        sure that the fields are of the correct length and that the password and
+        confirm password fields are the same and that the role type was selected.
+    */
+    if (uname.length >= 5 && uname.length <= 32 && pwd.length >= 5 && pwd.length <= 32 && pwd === confPwd
         && fullname.length > 0 && fullname.length <= 32 && type.length != 0) {
         var xhttp = new XMLHttpRequest();
-        xhttp.open("GET", "../php/register.php?username="+uname+"&fullname="+fullname+"&password="+pwd+"&type="+type, false);
-        xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 
+        //here we open our XMLHttpRequest with a GET command. String after is the URL and parameter values. The
+        //false is for whether this is asynchronous or not.
+        xhttp.open("POST", "../php/register.php", true);
+        xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
         xhttp.onreadystatechange = function() {
             if (this.readyState === 4 && this.status === 200) {
                 var res = this.response;
                 var result = JSON.parse(res);
-                alert(result['message'] + "\n" + result['role']);
-                if (result['role'] === "Doctor") {
-                    alert("in here");
-                    window.location.href = "../html/DrHome.html";
-                    return false;
-                } else {
-                    window.location.href = "../html/PatientHome.html";
-                    return false;
+                alert(result['message']);
+                if (result['code'] == 100) {
+                    if (result['role'] === "Doctor") {
+                        window.location.href = "../html/DrHome.html?username="+uname+"&fullname="+fullname;
+                        return false;
+                    } else {
+                        window.location.href = "../html/PatientHome.html?username="+uname+"&fullname="+fullname;
+                        return false;
+                    }
                 }
             }
         }
 
-        xhttp.send();
+        xhttp.send("username="+uname+"&fullname="+fullname+"&password="+pwd+"&type="+type);
     } else {
-        if (uname.length > 32) {
-            alert("Username must be less than 32 characters");
+        if (uname.length > 32 || uname.length < 5) {
+            alert("Username must be between 5 and 32 characters");
         }
         if (pwd.length < 5 || pwd.length > 32) {
             alert("Password must be between 5 and 32 characters");

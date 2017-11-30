@@ -24,10 +24,20 @@
         <input type="text" class="form-control" placeholder="Full Legal Name" name="fullname" required autofocus />
         <input type="password" class="form-control" placeholder="Password" required name="pwd">
         <input type="password" class="form-control" placeholder="Confirm Password" required name="confPwd">
-        <div class="btn-group" data-toggle="buttons-radio">
+        <label><input type="radio" name="type" value="Doctor">Doctor</label>
+        <label><input type="radio" name="type" value="Patient">Patient</label>
+        <!--<div class="btn-group" id="type_buttons" data-toggle="buttons">
+            <label class="radio-inline">
+                <input type="radio" class="toggle" value="Doctor"> Doctor
+            </label>
+            <label class="radio-inline">
+                <input type="radio" class="toggle" value="Patient"> Patient
+            </label>
+        </div>-->
+        <!--<div class="btn-group" id="type_buttons" data-toggle="buttons-radio">
             <label class="radio-inline"><input type="radio" name="role">Doctor</label>
             <label class="radio-inline"><input type="radio" name="role">Patient</label>
-        </div>
+        </div>-->
         <?php echo $errors; ?>
         <button class="btn btn-lg btn-primary btn-block" type="button" name="confirm" onclick="register(form.username.value, form.fullname.value, form.pwd.value, form.confPwd.value)">
             Confirm
