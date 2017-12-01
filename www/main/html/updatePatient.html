@@ -9,7 +9,8 @@
     <link href="../css/signin.css" rel="stylesheet">
     <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <script type="text/javascript"></script>
+    <script src="../js/jquery-3.2.1.min.js"></script>
+    <script src="../js/drHome.js"></script>
 </head>
 
 <body>
@@ -22,14 +23,14 @@
     </div>
 
     <div class="input-group input-group-lg">
-        <span class="input-group-addon">Height</span>
+        <span class="input-group-addon">Height in feet</span>
         <input type="text" id="height" class="form-control" placeholder="0.0">
     </div>
 
     <br>
 
     <div class="input-group input-group-lg">
-        <span class="input-group-addon">Weight</span>
+        <span class="input-group-addon">Weight in pounds</span>
         <input type="text" id="weight" class="form-control" placeholder="00.00">
     </div>
 
@@ -42,9 +43,9 @@
 
     <br>
 
-    <button class="btn btn-primary" id="submit" onclick="">Submit Update</button>
+    <button class="btn btn-primary" type="button" id="submit" onclick="updatePatientInfo($('#height').val(), $('#weight').val(), $('#age').val())">Submit Update</button>
+    <button class="btn btn-primary" type="button" id="cancel" onclick="cancel()">Cancel</button>
 </div>
-<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-<script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
+
 </body>
 </html>
