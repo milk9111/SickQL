@@ -33,6 +33,7 @@ function makeYourInformationTable (uname, fullname) {
         if (this.readyState === 4 && this.status === 200) {
             var res = this.response;
             var result = JSON.parse(res);
+
             if (result['code'] == 100) {
                 var html = $('#patInfo').html();
                 html += "<tr id='" + uname + "'>";
@@ -59,7 +60,7 @@ function makeYourPrescriptionsTable (uname) {
         if (this.readyState === 4 && this.status === 200) {
             var res = this.response;
             var result = JSON.parse(res);
-            console.log(result);
+
             if (result['code'] == 100) {
                 var prescriptions = result['prescriptions'];
                 var html = $('#presInfo').html();
@@ -148,6 +149,24 @@ function makeAvailableDoctorTable (uname) {
 //Removes a doctor from the patient
 function removeDoctor (patientUsername, doctorUsername) {
     console.log(patientUsername + " " + doctorUsername);
+
+    var xhttp = new XMLHttpRequest();
+    xhttp.open("GET", "../php/removeDoctor.php?patientName="+patientUsername+"&doctorName="+doctorUsername, true);
+    xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+
+    xhttp.onreadystatechange = function() {
+        if (this.readyState === 4 && this.status === 200) {
+            var res = this.response;
+            var result = JSON.parse(res);
+            console.log(result);
+            if (result['code'] == 100) {
+                location.reload(true);
+            } else {
+                alert("Failed to remove the Doctor from your list");
+            }
+        }
+    }
+    xhttp.send();
 }
 
 //Adds doctor to patient profile
@@ -155,7 +174,7 @@ function addDoctor (patientUsername, doctorUsername) {
 
     console.log(patientUsername + " " + doctorUsername);
     //I think this is right, not sure but the method does get the correct name of doctor and patient
-   /* var xhttp = new XMLHttpRequest();
+    var xhttp = new XMLHttpRequest();
     xhttp.open("GET", "../php/addDoctor.php?patientName="+patientUsername+"&doctorName="+doctorUsername, true);
     xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 
@@ -163,9 +182,15 @@ function addDoctor (patientUsername, doctorUsername) {
         if (this.readyState === 4 && this.status === 200) {
             var res = this.response;
             var result = JSON.parse(res);
-
+            console.log(result);
+            if (result['code'] == 100) {
+                location.reload(true);
+            } else {
+                alert("Failed to add the Doctor to your list");
+            }
+        }
     }
-    xhttp.send();*/
+    xhttp.send();
 }
 
 

@@ -19,11 +19,10 @@ try {
 
     $db = new PDO($dsn, $username, $password);
 
-    $select_sql = "INSERT INTO AssignTo (patientUsername, doctorUsername, active) VALUES
-                      (:patientName, :dname, :active)";
+    $select_sql = "DELETE FROM assignto WHERE patientUsername = :patientName AND doctorUsername = :dname";
     $sql = $db->prepare($select_sql);
 
-    $query = $sql->execute(array(":patientName"=>$patientName, ":dname"=>$dname, ":active"=>1));
+    $query = $sql->execute(array(":patientName"=>$patientName, ":dname"=>$dname));
 
     if ($query) {
         $result = array("code"=>100, "message"=>"Success");
