@@ -173,7 +173,7 @@ function removeDoctor (patientUsername, doctorUsername) {
 function addDoctor (patientUsername, doctorUsername) {
 
     console.log(patientUsername + " " + doctorUsername);
-    //I think this is right, not sure but the method does get the correct name of doctor and patient
+
     var xhttp = new XMLHttpRequest();
     xhttp.open("GET", "../php/addDoctor.php?patientName="+patientUsername+"&doctorName="+doctorUsername, true);
     xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");

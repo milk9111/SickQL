@@ -137,7 +137,11 @@ function updatePatientInfo(height, weight, age) {
 
 //Add prescription to patient
 function addPrescription(patientName, doctorName) {
+
+    document.cookie = "patientName=" + patientName;
+    document.cookie = "doctorName=" + doctorName;
     console.log("Add Prescription to Patient: " + patientName + " " + "Doctor: " + doctorName);
+    window.location.href = "../html/addPrescription.html";
 }
 
 
