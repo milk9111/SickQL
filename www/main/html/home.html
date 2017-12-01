@@ -20,7 +20,7 @@
 	
 	<form class="form-signin" role="form" method="POST">
 		<h4 class="form-signin-heading text-center">Please sign in</h4>
-		<input type="text" class="form-control" placeholder="Username" id="username" name="username" value="iamguilty@gmail.com" required autofocus />
+		<input type="text" class="form-control" placeholder="Username" id="username" name="username" required autofocus />
 		<input type="password" class="form-control" placeholder="Password" id="pwd" required name="pwd">
 		<?php echo $errors; ?>
 		<button class="btn btn-lg btn-primary btn-block" type="button" name="signin" onclick="login(form.username.value, form.pwd.value)">

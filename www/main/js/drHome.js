@@ -1,5 +1,10 @@
-
-
+/**
+ * Called on start up of the webpage. It kicks off the whole thing by retrieving the cookie
+ * that was set on sign in or register in order to know who we're dealing with.
+ *
+ * This will then make the table that is used by the Doctor and show it on the
+ * webpage.
+ */
 function startUp () {
     var cookie = document.cookie;
     console.log(cookie);

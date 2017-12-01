@@ -9,20 +9,21 @@
     <link href="../css/signin.css" rel="stylesheet">
     <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <script type="text/javascript"></script>
+      <script src="../js/jquery-3.2.1.min.js"></script>
+      <script src="../js/patientHome.js"></script>
   </head>
 
-  <body>
+  <body onload="startUp()">
 <div class="container">
 	<!-- BEGIN CONTENT -->
-	<h2 class="text-center">Hello</h2>
+	<h2 class="text-center">Hello <span id="name"></span></h2>
 
     <h4 class="form-signin-heading text-center">Your Information</h4>
     <table class="table table-hover" id="patInfo">
         <thead>
         <tr>
-            <th scope="col">User Name</th>
-            <th scope="col">email</th>
+            <th scope="col">Full Legal Name</th>
+            <th scope="col">Username</th>
             <th scope="col">Height</th>
             <th scope="col">Weight</th>
             <th scope="col">Age</th>
@@ -51,13 +52,12 @@
     <div class="row">
         <div class="col-sm-4">
             <h4 class="form-signin-heading text-center">Your Doctors</h4>
-            <table class="table table-hover table-bordered table-condensed table-sm text-center" id="patDocs">
-            <thead>
+            <table class="table table-hover table-bordered table-condensed table-sm text-center" id="assigned_doctors_table">
+            <tbody>
                 <tr>
-                    <th scope="col">Email</th>
                     <th scope="col">Name</th>
                 </tr>
-            </thead>
+            </tbody>
             </table>
         </div>
     </div>
@@ -66,20 +66,20 @@
 
     <h4 class="form-signin-heading text-center">Add Doctors</h4>
     <table class="table table-hover table-bordered" id="allDocs">
-        <thead>
+        <tbody>
         <tr>
             <th scope="col">Email</th>
             <th scope="col">Name</th>
             <th>Add Doctor</th>
         </tr>
-        <tr>
+        <!--<tr>
             <td scope="col">drHalsey@yahoo.com</td>
             <td scope="col">Dr Halsey</td>
             <td><button type="button" class="btn btn-default btn-sm" id="addDoctorBut">
                 <span class="glyphicon glyphicon-plus"></span> Add Doctor
             </button></td>
-        </tr>
-        </thead>
+        </tr>-->
+        </tbody>
     </table>
        <!-- <form class="form-signin" role="form" method="POST" action="<?php echo $_SERVER['PHP_SELF']; ?>">
 		<h4 class="form-signin-heading text-center">Prescriptions</h4>
@@ -97,8 +97,5 @@
     </table>
 
 	</form> -->
-
-    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
   </body>
 </html>
