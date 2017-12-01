@@ -37,7 +37,7 @@ function submitPrescription(name, dose, cost, frequency, refill, manu) {
     //console.log("Submited: " + patientUserName + " " + doctorUserName + " " + name + " " + dose + " " + cost + " " + frequency + " " + refill + " " + manu);
 
     var xhttp = new XMLHttpRequest();
-    xhttp.open("GET", "../php/addPrescription.php?patientName="+patientUserName+"&doctorName="+doctorUserName, true);
+    xhttp.open("GET", "../php/addPrescription.php?patientName="+patientUserName+"&prename="+name, true);
     //xhttp.open("GET", "../php/addPrescription.php?patientName="+patientUserName+"&doctorName="+doctorUserName+"&dose="dose+"&cost="cost+"&freq="frequency+"&refill="refill+"&manu="manu, true);
     xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 

@@ -14,12 +14,15 @@ $username = 'root';
 $password = '';
 
 $uname = $_GET['patientName'];
-$dname = $_GET['doctorName'];
-//$dose = $_GET['dose'];
+//$dname = $_POST['doctorName'];
+$prename = $_GET['prename'];
+//$dose = $_POST['dose'];
 //$cost = $_GET['cost'];
 //$freq = $_GET['freq'];
 //$refill = $_GET['refill'];
-//$manu = $_GET['manu'];
+//$manu = $_POST['manu'];
+
+echo($uname);
 
 try {
 
