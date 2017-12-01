@@ -2,17 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="52154059-6798-4369-8dd6-1b782509887e" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/main/php/getPrescriptionsForPatient.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/main/php/getYourInformation.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/main/php/getYourPrescriptions.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.xml" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/main/build_database_sickQL.sql" afterPath="$PROJECT_DIR$/www/main/build_database_sickQL.sql" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/main/html/PatientHome.html" afterPath="$PROJECT_DIR$/www/main/html/PatientHome.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/main/js/patientHome.js" afterPath="$PROJECT_DIR$/www/main/js/patientHome.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/main/php/getDoctorsForPatient.php" afterPath="$PROJECT_DIR$/www/main/php/getDoctorsForPatient.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/main/php/getPatientsForDoctor.php" afterPath="$PROJECT_DIR$/www/main/php/getPatientsForDoctor.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/main/php/getAvailableDoctors.php" afterPath="$PROJECT_DIR$/www/main/php/getAvailableDoctors.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -86,11 +77,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="getYourPrescriptions.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="getYourPrescriptions.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/www/main/php/getYourPrescriptions.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="31" column="37" lean-forward="true" selection-start-line="31" selection-start-column="37" selection-end-line="31" selection-end-column="37" />
+            <state relative-caret-position="420">
+              <caret line="49" column="17" lean-forward="true" selection-start-line="49" selection-start-column="17" selection-end-line="49" selection-end-column="17" />
               <folding>
                 <marker date="1512096686636" expanded="true" signature="512:819" ph="SELECT nameP... Prescription" />
               </folding>
@@ -98,11 +89,21 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="patientHome.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/www/main/js/patientHome.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="206">
+              <caret line="117" column="43" lean-forward="true" selection-start-line="117" selection-start-column="43" selection-end-line="117" selection-end-column="43" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="PatientHome.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/www/main/html/PatientHome.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="301">
-              <caret line="42" column="44" lean-forward="true" selection-start-line="42" selection-start-column="44" selection-end-line="42" selection-end-column="44" />
+            <state relative-caret-position="182">
+              <caret line="35" column="64" lean-forward="false" selection-start-line="35" selection-start-column="56" selection-end-line="35" selection-end-column="64" />
               <folding />
             </state>
           </provider>
@@ -126,14 +127,14 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="getAvailableDoctors.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="getAvailableDoctors.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/www/main/php/getAvailableDoctors.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="97">
-              <caret line="19" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="66" selection-end-column="0" />
+            <state relative-caret-position="250">
+              <caret line="40" column="9" lean-forward="true" selection-start-line="40" selection-start-column="9" selection-end-line="40" selection-end-column="9" />
               <folding>
-                <marker date="1512094453302" expanded="true" signature="512:960" ph="SELECT Docto... Doctor" />
-                <marker date="1512094453302" expanded="true" signature="733:855" ph="SELECT docto... AssignTo" />
+                <marker date="1512099036905" expanded="true" signature="512:728" ph="SELECT Docto... Doctor" />
+                <marker date="1512099036905" expanded="true" signature="620:727" ph="SELECT docto... AssignTo" />
               </folding>
             </state>
           </provider>
@@ -152,19 +153,6 @@
                 <marker date="1512096136907" expanded="true" signature="1157:1514" ph="CREATE TABLE... Prescription" />
                 <marker date="1512096136907" expanded="true" signature="2063:2092" ph="DROP TABLE I... " />
                 <marker date="1512096136907" expanded="true" signature="2094:2265" ph="CREATE TABLE... AssignTo" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="getDoctorsForPatient.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/www/main/php/getDoctorsForPatient.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="248">
-              <caret line="30" column="38" lean-forward="false" selection-start-line="30" selection-start-column="38" selection-end-line="30" selection-end-column="38" />
-              <folding>
-                <marker date="1512094491020" expanded="true" signature="527:990" ph="SELECT Docto... Doctor" />
-                <marker date="1512094491020" expanded="true" signature="748:885" ph="SELECT docto... AssignTo" />
               </folding>
             </state>
           </provider>
@@ -210,14 +198,14 @@
         <option value="$PROJECT_DIR$/www/main/html/home.html" />
         <option value="$PROJECT_DIR$/www/main/js/drHome.js" />
         <option value="$PROJECT_DIR$/www/main/php/getYourInformation.php" />
-        <option value="$PROJECT_DIR$/www/main/js/patientHome.js" />
-        <option value="$PROJECT_DIR$/www/main/php/getAvailableDoctors.php" />
         <option value="$PROJECT_DIR$/www/main/php/getPatientsForDoctor.php" />
         <option value="$PROJECT_DIR$/www/main/php/getDoctorsForPatient.php" />
         <option value="$PROJECT_DIR$/www/main/build_database_sickQL.sql" />
         <option value="$APPLICATION_CONFIG_DIR$/consoles/db/6249d010-2dc7-4517-84ac-8ee8b4053262/console.sql" />
         <option value="$PROJECT_DIR$/www/main/html/PatientHome.html" />
         <option value="$PROJECT_DIR$/www/main/php/getYourPrescriptions.php" />
+        <option value="$PROJECT_DIR$/www/main/js/patientHome.js" />
+        <option value="$PROJECT_DIR$/www/main/php/getAvailableDoctors.php" />
       </list>
     </option>
   </component>
@@ -422,12 +410,12 @@
       <updated>1511823739789</updated>
       <workItem from="1511823741508" duration="6604000" />
       <workItem from="1511847008480" duration="9241000" />
-      <workItem from="1512065288281" duration="28703000" />
+      <workItem from="1512065288281" duration="30812000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="44548000" />
+    <option name="totallyTimeSpent" value="46657000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
@@ -717,14 +705,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/www/main/js/patientHome.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="66" column="58" lean-forward="false" selection-start-line="66" selection-start-column="58" selection-end-line="66" selection-end-column="58" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="das://table:/c2a7daf1/6249d010-2dc7-4517-84ac-8ee8b4053262/connorl2.assignto">
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
@@ -803,25 +783,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/www/main/php/getAvailableDoctors.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="97">
-          <caret line="19" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="66" selection-end-column="0" />
-          <folding>
-            <marker date="1512094453302" expanded="true" signature="512:960" ph="SELECT Docto... Doctor" />
-            <marker date="1512094453302" expanded="true" signature="733:855" ph="SELECT docto... AssignTo" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/www/main/html/PatientHome.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="301">
-          <caret line="42" column="44" lean-forward="true" selection-start-line="42" selection-start-column="44" selection-end-line="42" selection-end-column="44" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/6249d010-2dc7-4517-84ac-8ee8b4053262/console.sql">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="304">
@@ -837,12 +798,39 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/www/main/html/PatientHome.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="182">
+          <caret line="35" column="64" lean-forward="false" selection-start-line="35" selection-start-column="56" selection-end-line="35" selection-end-column="64" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/www/main/php/getYourPrescriptions.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="31" column="37" lean-forward="true" selection-start-line="31" selection-start-column="37" selection-end-line="31" selection-end-column="37" />
+        <state relative-caret-position="420">
+          <caret line="49" column="17" lean-forward="true" selection-start-line="49" selection-start-column="17" selection-end-line="49" selection-end-column="17" />
           <folding>
             <marker date="1512096686636" expanded="true" signature="512:819" ph="SELECT nameP... Prescription" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/main/js/patientHome.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="206">
+          <caret line="117" column="43" lean-forward="true" selection-start-line="117" selection-start-column="43" selection-end-line="117" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/main/php/getAvailableDoctors.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="250">
+          <caret line="40" column="9" lean-forward="true" selection-start-line="40" selection-start-column="9" selection-end-line="40" selection-end-column="9" />
+          <folding>
+            <marker date="1512099036905" expanded="true" signature="512:728" ph="SELECT Docto... Doctor" />
+            <marker date="1512099036905" expanded="true" signature="620:727" ph="SELECT docto... AssignTo" />
           </folding>
         </state>
       </provider>

@@ -19,7 +19,7 @@ try {
     $db = new PDO($dsn, $username, $password);
 
     //The query to execute. This will get all of the available doctors.
-    $select_sql = "SELECT username
+    $select_sql = "SELECT Doctor.fullname AS fullname
                    FROM Doctor
                    WHERE username NOT IN (SELECT doctorUsername
                     FROM AssignTo 
@@ -34,7 +34,7 @@ try {
     $query = $sql->fetchAll(PDO::FETCH_ASSOC);
     foreach ($query as $arr) {
         if ($arr) {
-            $doctors[$i] = array("username"=>$arr['username'], "fullname"=>$arr['fullname']);
+            $doctors[$i] = array("fullname"=>$arr['fullname']);
         } else {
             $broke = true;
             break;

@@ -18,6 +18,7 @@ function startUp () {
 
     //make the tables
     makeYourInformationTable (uname, fullname);
+    makeYourPrescriptionsTable (uname);
     makeAssignedDoctorTable (uname);
     makeAvailableDoctorTable (uname);
 }
@@ -32,7 +33,6 @@ function makeYourInformationTable (uname, fullname) {
         if (this.readyState === 4 && this.status === 200) {
             var res = this.response;
             var result = JSON.parse(res);
-            console.log(result);
             if (result['code'] == 100) {
                 var html = $('#patInfo').html();
                 html += "<tr id='" + uname + "'>";
@@ -42,6 +42,39 @@ function makeYourInformationTable (uname, fullname) {
                 html += "<td scope=\"col\">" + result['age'] + "</td>";
                 html += "</tr>";
                 $('#patInfo tbody').replaceWith(html);
+            }
+        }
+    }
+
+    xhttp.send();
+}
+
+
+function makeYourPrescriptionsTable (uname) {
+    var xhttp = new XMLHttpRequest();
+    xhttp.open("GET", "../php/getYourPrescriptions.php?username="+uname, true);
+    xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+
+    xhttp.onreadystatechange = function() {
+        if (this.readyState === 4 && this.status === 200) {
+            var res = this.response;
+            var result = JSON.parse(res);
+            console.log(result);
+            if (result['code'] == 100) {
+                var prescriptions = result['prescriptions'];
+                var html = $('#presInfo').html();
+
+                for (var i = 0; i < prescriptions.length; i++) {
+                    html += "<tr id='" + uname + "'>";
+                    html += "<td scope=\"col\">" + prescriptions[i]['name'] + "</td>";
+                    html += "<td scope=\"col\">" + prescriptions[i]['dose'] + "</td>";
+                    html += "<td scope=\"col\">" + prescriptions[i]['cost'] + "</td>";
+                    html += "<td scope=\"col\">" + prescriptions[i]['frequency'] + "</td>";
+                    html += "<td scope=\"col\">" + prescriptions[i]['refill_date'] + "</td>";
+                    html += "<td scope=\"col\">" + prescriptions[i]['manufacturer'] + "</td>";
+                    html += "</tr>";
+                }
+                $('#presInfo tbody').replaceWith(html);
             }
         }
     }
