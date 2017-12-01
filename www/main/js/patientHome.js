@@ -130,9 +130,9 @@ function makeAvailableDoctorTable (uname) {
                 var html = $('#allDocs').html();
 
                 for (var i = 0; i < doctors.length; i++) {
-                    html += "<tr id='" + doctors[i]['username'] + "'>";
-                    html += "<td scope=\"col\">" + doctors[i]['fullname'] + "</td>";
-                    html += "<td><button type=\"button\" class=\"btn btn-default btn-sm\" id=\"addDoctorBut\">\n" +
+                    html += "<tr id='" + i + "'>";
+                    html += "<td scope=\"col\" id='" + doctors[i]['username'] + "'>" + doctors[i]['fullname'] + "</td>";
+                    html += "<td><button type=\"button\" class=\"btn btn-default btn-sm\" onclick='addDoctor()' id=\"addDoctorBut\">\n" +
                         "                <span class=\"glyphicon glyphicon-plus\"></span> Add Doctor\n" +
                         "            </button></td>";
                     html += "</tr>";
@@ -143,6 +143,11 @@ function makeAvailableDoctorTable (uname) {
     }
 
     xhttp.send();
+}
+
+
+function addDoctor (patientUsername, doctorUsername) {
+
 }
 
 
