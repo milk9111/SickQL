@@ -6,21 +6,22 @@
  * webpage.
  */
 function startUp () {
-    var cookie = document.cookie; //get the cookie
+    var cookie = document.cookie;
+    console.log("the cookie is: " + document.cookie);
+    var params = cookie.split(";");
+    var uname = params[0].split("&");
 
-    //get the arguments
-    var params = cookie.split("&");
-    var uname = params[0].substring(params[0].indexOf('=')+1);
-    var fullname = params[1].substring(params[1].indexOf('=')+1);
+    var fullname = uname[1];
+    var username = uname[0].substring(uname[0].indexOf("=")+1);
 
     //set the name field to show the right person is signed in succesfully
     $('#name').text(fullname);
 
     //make the tables
-    makeYourInformationTable (uname, fullname);
-    makeYourPrescriptionsTable (uname);
-    makeAssignedDoctorTable (uname);
-    makeAvailableDoctorTable (uname);
+    makeYourInformationTable (username, fullname);
+    makeYourPrescriptionsTable (username);
+    makeAssignedDoctorTable (username);
+    makeAvailableDoctorTable (username);
 }
 
 
