@@ -19,17 +19,11 @@ try {
     $db = new PDO($dsn, $username, $password);
 
     //The query to execute. This will get all of the available doctors.
-    $select_sql = "SELECT
-                      Doctor.username AS username,
-                      Doctor.fullname AS fullname
-                    FROM Doctor
-                    JOIN
-                          (
-                            SELECT doctorUsername
-                            FROM AssignTo
-                            WHERE patientUsername = :uname
-                          ) AS Matches
-                      ON Doctor.username = Matches.doctorUsername";
+    $select_sql = "SELECT username
+                   FROM Doctor
+                   WHERE username NOT IN (SELECT doctorUsername
+                    FROM AssignTo 
+                    WHERE patientUsername = :uname)";
 
     $sql = $db->prepare($select_sql);
     $sql->execute(array(":uname"=>$uname));
