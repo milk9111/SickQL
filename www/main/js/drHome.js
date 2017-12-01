@@ -42,13 +42,13 @@ function makePatientTable (uname) {
                     html += "<td>" + patients[i]['height'] + "</td>";
                     html += "<td>" + patients[i]['weight'] + "</td>";
                     html += "<td>" + patients[i]['age'] + "</td>";
-                    html += "<td><button type=\"button\" class=\"btn btn-default btn-sm\" id=\"addPresBut\">\n" +
+                    html += "<td><button type=\"button\" class=\"btn btn-default btn-sm\" onclick='addPrescription(" + "\"" + patients[i]['username'] + "\"" + ", " + "\"" + uname + "\"" +")' id=\"addPresBut\">\n" +
                         "                <span class=\"glyphicon glyphicon-plus\"></span> Add Prescription\n" +
                         "            </button></td>\n" +
-                        "            <td><button type=\"button\" class=\"btn btn-default btn-sm\" id=\"updateBut\">\n" +
+                        "            <td><button type=\"button\" class=\"btn btn-default btn-sm\" onclick='updatePatient(" + "\"" + patients[i]['username'] + "\"" + ")' id=\"updateBut\">\n" +
                         "                <span class=\"glyphicon glyphicon-plus\"></span> Update Patient\n" +
                         "            </button></td>\n" +
-                        "            <td><button type=\"button\" class=\"btn btn-default btn-sm\" id=\"removeBut\">\n" +
+                        "            <td><button type=\"button\" class=\"btn btn-default btn-sm\" onclick='removePatient(" + "\"" + patients[i]['username'] + "\"" + ")' id=\"removeBut\">\n" +
                         "                <span class=\"glyphicon glyphicon-minus\"></span> Remove Patient\n" +
                         "            </button></td>"
                     html += "</tr>";
@@ -61,6 +61,21 @@ function makePatientTable (uname) {
     }
 
     xhttp.send();
+}
+
+//Remove the patient
+function removePatient(patientName) {
+    console.log("Remove Patient: " + patientName);
+}
+
+//Update the patient information
+function updatePatient(patientName) {
+    console.log("Update Patient: " + patientName);
+}
+
+//Add prescription to patient
+function addPrescription(patientName, doctorName) {
+    console.log("Add Prescription to Patient: " + patientName + " " + "Doctor: " + doctorName);
 }
 
 
