@@ -100,7 +100,7 @@ function makeAssignedDoctorTable (uname) {
                 for (var i = 0; i < doctors.length; i++) {
                     html += "<tr id='" + doctors[i]['username'] + "'>";
                     html += "<td scope=\"col\">" + doctors[i]['fullname'] + "</td>";
-                    html += "<td><button type=\"button\" class=\"btn btn-default btn-sm\" id=\"removeDoctorBut\">\n" +
+                    html += "<td><button type=\"button\" class=\"btn btn-default btn-sm\" onclick='removeDoctor(" + "\"" + uname + "\"" + ", " + "\"" + doctors[i]['username'] + "\"" + ")' id=\"removeDoctorBut\">\n" +
                         "                <span class=\"glyphicon glyphicon-minus\"></span> Remove Doctor\n" +
                         "            </button></td>"
                     html += "</tr>";
@@ -132,9 +132,9 @@ function makeAvailableDoctorTable (uname) {
                 for (var i = 0; i < doctors.length; i++) {
                     html += "<tr id='" + i + "'>";
                     html += "<td scope=\"col\" id='" + doctors[i]['username'] + "'>" + doctors[i]['fullname'] + "</td>";
-                    html += "<td><button type=\"button\" class=\"btn btn-default btn-sm\" onclick='addDoctor()' id=\"addDoctorBut\">\n" +
-                        "                <span class=\"glyphicon glyphicon-plus\"></span> Add Doctor\n" +
-                        "            </button></td>";
+                    html += "<td><button type=\"button\" class=\"btn btn-default btn-sm\" onclick='addDoctor(" + "\"" + uname + "\"" + ", " + "\"" + doctors[i]['username'] + "\"" + ")' id=\"addDoctorBut\">\n" +
+                        " <span class=\"glyphicon glyphicon-plus\"></span> Add Doctor\n" +
+                        " </button></td>";
                     html += "</tr>";
                 }
                 $('#allDocs tbody').replaceWith(html);
@@ -145,9 +145,27 @@ function makeAvailableDoctorTable (uname) {
     xhttp.send();
 }
 
+//Removes a doctor from the patient
+function removeDoctor (patientUsername, doctorUsername) {
+    console.log(patientUsername + " " + doctorUsername);
+}
 
+//Adds doctor to patient profile
 function addDoctor (patientUsername, doctorUsername) {
 
+    console.log(patientUsername + " " + doctorUsername);
+    //I think this is right, not sure but the method does get the correct name of doctor and patient
+   /* var xhttp = new XMLHttpRequest();
+    xhttp.open("GET", "../php/addDoctor.php?patientName="+patientUsername+"&doctorName="+doctorUsername, true);
+    xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+
+    xhttp.onreadystatechange = function() {
+        if (this.readyState === 4 && this.status === 200) {
+            var res = this.response;
+            var result = JSON.parse(res);
+
+    }
+    xhttp.send();*/
 }
 
 
