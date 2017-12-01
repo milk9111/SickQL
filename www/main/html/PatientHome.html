@@ -20,31 +20,30 @@
 
     <h4 class="form-signin-heading text-center">Your Information</h4>
     <table class="table table-hover" id="patInfo">
-        <thead>
+        <tbody>
         <tr>
             <th scope="col">Full Legal Name</th>
-            <th scope="col">Username</th>
             <th scope="col">Height</th>
             <th scope="col">Weight</th>
             <th scope="col">Age</th>
         </tr>
-        </thead>
+        </tbody>
     </table>
 
     <br>
 
     <h4 class="form-signin-heading text-center">Your Prescriptions</h4>
     <table class="table table-hover table-bordered" id="presInfo">
-        <thead>
+        <tbody>
         <tr>
             <th scope="col">Name</th>
-            <th scope="col">Dose</th>
-            <th scope="col">Cost</th>
-            <th scope="col">Frequency</th>
+            <th scope="col">Dose To Take</th>
+            <th scope="col">Cost For Prescription</th>
+            <th scope="col">Frequency Per Day</th>
             <th scope="col">Refill Date</th>
-            <th scope="col">Manufactuerer</th>
+            <th scope="col">Manufacturer</th>
         </tr>
-        </thead>
+        </tbody>
     </table>
 
     <br>
@@ -52,10 +51,11 @@
     <div class="row">
         <div class="col-sm-4">
             <h4 class="form-signin-heading text-center">Your Doctors</h4>
-            <table class="table table-hover table-bordered table-condensed table-sm text-center" id="assigned_doctors_table">
+            <table class="table table-hover table-bordered table-condensed table-sm" id="assigned_doctors_table">
             <tbody>
                 <tr>
                     <th scope="col">Name</th>
+                    <th scope="col">Remove Doctor</th>
                 </tr>
             </tbody>
             </table>
@@ -68,7 +68,6 @@
     <table class="table table-hover table-bordered" id="allDocs">
         <tbody>
         <tr>
-            <th scope="col">Email</th>
             <th scope="col">Name</th>
             <th>Add Doctor</th>
         </tr>
@@ -81,21 +80,5 @@
         </tr>-->
         </tbody>
     </table>
-       <!-- <form class="form-signin" role="form" method="POST" action="<?php echo $_SERVER['PHP_SELF']; ?>">
-		<h4 class="form-signin-heading text-center">Prescriptions</h4>
-    <table class="table table-hover">
-      <thead>
-        <tr>
-          <th scope="col">Name</th>
-          <th scope="col">Dose</th>
-          <th scope="col">Cost</th>
-          <th scope="col">Frequency</th>
-          <th scope="col">Refill Date</th>
-          <th scope="col">Manufactuerer</th>
-        </tr>
-      </thead>
-    </table>
-
-	</form> -->
   </body>
 </html>

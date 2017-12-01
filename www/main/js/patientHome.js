@@ -17,8 +17,36 @@ function startUp () {
     $('#name').text(fullname);
 
     //make the tables
+    makeYourInformationTable (uname, fullname);
     makeAssignedDoctorTable (uname);
     makeAvailableDoctorTable (uname);
+}
+
+
+function makeYourInformationTable (uname, fullname) {
+    var xhttp = new XMLHttpRequest();
+    xhttp.open("GET", "../php/getYourInformation.php?username="+uname, true);
+    xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+
+    xhttp.onreadystatechange = function() {
+        if (this.readyState === 4 && this.status === 200) {
+            var res = this.response;
+            var result = JSON.parse(res);
+            console.log(result);
+            if (result['code'] == 100) {
+                var html = $('#patInfo').html();
+                html += "<tr id='" + uname + "'>";
+                html += "<td scope=\"col\">" + fullname + "</td>";
+                html += "<td scope=\"col\">" + result['height'] + "</td>";
+                html += "<td scope=\"col\">" + result['weight'] + "</td>";
+                html += "<td scope=\"col\">" + result['age'] + "</td>";
+                html += "</tr>";
+                $('#patInfo tbody').replaceWith(html);
+            }
+        }
+    }
+
+    xhttp.send();
 }
 
 
@@ -39,6 +67,9 @@ function makeAssignedDoctorTable (uname) {
                 for (var i = 0; i < doctors.length; i++) {
                     html += "<tr id='" + doctors[i]['username'] + "'>";
                     html += "<td scope=\"col\">" + doctors[i]['fullname'] + "</td>";
+                    html += "<td><button type=\"button\" class=\"btn btn-default btn-sm\" id=\"removeDoctorBut\">\n" +
+                        "                <span class=\"glyphicon glyphicon-minus\"></span> Remove Doctor\n" +
+                        "            </button></td>"
                     html += "</tr>";
                 }
                 $('#assigned_doctors_table tbody').replaceWith(html);
@@ -68,6 +99,9 @@ function makeAvailableDoctorTable (uname) {
                 for (var i = 0; i < doctors.length; i++) {
                     html += "<tr id='" + doctors[i]['username'] + "'>";
                     html += "<td scope=\"col\">" + doctors[i]['fullname'] + "</td>";
+                    html += "<td><button type=\"button\" class=\"btn btn-default btn-sm\" id=\"addDoctorBut\">\n" +
+                        "                <span class=\"glyphicon glyphicon-plus\"></span> Add Doctor\n" +
+                        "            </button></td>";
                     html += "</tr>";
                 }
                 $('#allDocs tbody').replaceWith(html);

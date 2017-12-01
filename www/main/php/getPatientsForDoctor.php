@@ -30,7 +30,7 @@ try {
                           (
                             SELECT patientUsername
                             FROM AssignTo
-                            WHERE doctorUsername = :uname
+                            WHERE doctorUsername = :uname AND active = 1
                           ) AS Matches
                       ON Patient.username = Matches.patientUsername";
 

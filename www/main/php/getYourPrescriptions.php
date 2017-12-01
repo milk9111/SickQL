@@ -18,29 +18,28 @@ try {
 
     $db = new PDO($dsn, $username, $password);
 
-    //The query to execute. This will get all of the doctors assigned to this patient.
+    //The query to execute. This will get all of the available doctors.
     $select_sql = "SELECT
-                      Doctor.username AS username,
-                      Doctor.fullname AS fullname
-                    FROM Doctor
-                    JOIN
-                          (
-                            SELECT doctorUsername
-                            FROM AssignTo
-                            WHERE patientUsername = :uname AND active = 1
-                          ) AS Matches
-                      ON Doctor.username = Matches.doctorUsername";
+                      namePre AS name,
+                      dose,
+                      cost,
+                      frequency,
+                      refillDate,
+                      manufacturer
+                    FROM Prescription
+                    WHERE patientUsername = :uname AND active = 1";
 
     $sql = $db->prepare($select_sql);
     $sql->execute(array(":uname"=>$uname));
 
-    $doctors = array();
+    $prescriptions = array();
     $i = 0;
     $broke = false;
     $query = $sql->fetchAll(PDO::FETCH_ASSOC);
     foreach ($query as $arr) {
         if ($arr) {
-            $doctors[$i] = array("username"=>$arr['username'], "fullname"=>$arr['fullname']);
+            $prescriptions[$i] = array("name"=>$arr['name'], "dose"=>$arr['dose'], "cost"=>$arr['cost'], "frequency"=>$arr['frequency'],
+                "refill_date"=>$arr['refillDate'], "manufacturer"=>$arr['manufacturer']);
         } else {
             $broke = true;
             break;
@@ -51,7 +50,7 @@ try {
     if ($broke) {
         $result = array("code"=>200, "message"=>"Unable to get Doctors for this Patient");
     } else {
-        $result = array("code"=>100, "doctors"=>$doctors);
+        $result = array("code"=>100, "prescriptions"=>$prescriptions);
     }
     echo json_encode($result);
 
