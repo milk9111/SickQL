@@ -11,20 +11,30 @@ var doctorFullname = "";
  */
 function startUp () {
     var cookie = document.cookie;
-    console.log(cookie);
-    var params = cookie.split("&");
-    var uname = params[0].substring(params[0].indexOf('=')+1);
+    console.log("the cookie is: " + document.cookie);
+    var params = cookie.split(";");
+    var uname = params[0].split("&");
+
+    var fullname = uname[1];
+    var username = uname[0].substring(uname[0].indexOf("=")+1);
+
+    /*if (uname.indexOf(";") < 0) {
+        uname = uname.substring(0, uname.indexOf(";"));
+    }
     doctorUsername = uname;
     var fullname = params[1].substring(params[1].indexOf('=')+1);
-    doctorFullname = fullname;
+    if (fullname.indexOf(";") < 0) {
+        fullname = fullname.substring(0, fullname.indexOf(";"));
+    }
+    doctorFullname = fullname;*/
 
     $('#name').text(fullname);
 
-    makePatientTable (uname);
+    makePatientTable (username, fullname);
 }
 
 
-function makePatientTable (uname) {
+function makePatientTable (uname, fullname) {
     var xhttp = new XMLHttpRequest();
     //xhttp.open("GET", "http://cssgate.insttech.washington.edu/~connorl2/home/main/php/login.php?username="+uname+"&password="+pwd, false);
     //xhttp.open("GET", "localhost/SickQL/www/main/php/login.php?username="+uname+"&password="+pwd, false);
@@ -50,7 +60,7 @@ function makePatientTable (uname) {
                     html += "<td><button type=\"button\" class=\"btn btn-default btn-sm\" onclick='addPrescription(" + "\"" + patients[i]['username'] + "\"" + ", " + "\"" + uname + "\"" +")' id=\"addPresBut\">\n" +
                         "                <span class=\"glyphicon glyphicon-plus\"></span> Add Prescription\n" +
                         "            </button></td>\n" +
-                        "            <td><button type=\"button\" class=\"btn btn-default btn-sm\" onclick='updatePatient(" + "\"" + patients[i]['username'] + "\"" + ")' id=\"updateBut\">\n" +
+                        "            <td><button type=\"button\" class=\"btn btn-default btn-sm\" onclick='updatePatient(" + "\"" + uname + "\"," + "\"" + fullname+ "\"," + "\"" + patients[i]['username'] + "\"" + ")' id=\"updateBut\">\n" +
                         "                <span class=\"glyphicon glyphicon-plus\"></span> Update Patient\n" +
                         "            </button></td>\n" +
                         "            <td><button type=\"button\" class=\"btn btn-default btn-sm\" onclick='removePatient(" + "\"" + uname + "\"," + "\"" + patients[i]['username'] + "\"" + ")' id=\"removeBut\">\n" +
@@ -92,48 +102,15 @@ function removePatient(doctorUsername, patientName) {
 }
 
 //Update the patient information
-function updatePatient(patientName) {
+function updatePatient(dname, dFname, patientName) {
     console.log("Update Patient: " + patientName);
 
     //document.cookie = "patientUsername=" + patientName;
     patientToUpdate = patientName;
     window.location.href = "../html/updatePatient.html";
+    document.cookie = "username="+dname+"&"+dFname+"&"+patientName+";";
 }
 
-
-function updatePatientInfo(height, weight, age) {
-    console.log("Updating " + patientToUpdate);
-
-    if (height.length > 0 && weight.length > 0 && age.length > 0) {
-        var xhttp = new XMLHttpRequest();
-        xhttp.open("GET", "../php/updatePatient.php?patientName=" + patientToUpdate + "&height=" + height + "&weight=" + weight + "&age=" + age, true);
-        xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-
-        xhttp.onreadystatechange = function () {
-            if (this.readyState === 4 && this.status === 200) {
-                var res = this.response;
-                var result = JSON.parse(res);
-                console.log(result);
-                if (result['code'] == 100) {
-                    location.reload(true);
-                } else {
-                    alert("Failed to update the Patient information");
-                }
-            }
-        }
-        xhttp.send();
-    } else {
-        if (height.length == 0) {
-            alert("Must specify a height");
-        }
-        if (weight.length == 0) {
-            alert("Must specify a weight");
-        }
-        if (age.length == 0) {
-            alert("Must specify an age");
-        }
-    }
-}
 
 //Add prescription to patient
 function addPrescription(patientName, doctorName) {

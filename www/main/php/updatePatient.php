@@ -13,19 +13,21 @@ $dsn = 'mysql:host=localhost;dbname=connorl2';
 $username = 'root';
 $password = '';
 
-$uname = $_POST['username'];
-$height = $_POST['height'];
-$weight = $_POST['weight'];
-$age = $_POST['age'];
+$uname = $_GET['username'];
+$height = $_GET['height'];
+$weight = $_GET['weight'];
+$age = $_GET['age'];
 
 try {
 
     $db = new PDO($dsn, $username, $password);
 
-    $select_sql = "DELETE FROM assignto WHERE patientUsername = :patientName AND doctorUsername = :dname";
+    $select_sql = "UPDATE Patient
+                    SET height = :height, weight = :weight, age = :age
+                    WHERE username = :uname";
     $sql = $db->prepare($select_sql);
 
-    $query = $sql->execute(array(":patientName"=>$patientName, ":dname"=>$dname));
+    $query = $sql->execute(array(":height"=>$height, ":weight"=>$weight, ":age"=>$age, ":uname"=>$uname));
 
     if ($query) {
         $result = array("code"=>100, "message"=>"Success");
