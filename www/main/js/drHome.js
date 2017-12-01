@@ -135,13 +135,6 @@ function updatePatientInfo(height, weight, age) {
     }
 }
 
-
-function cancel () {
-    document.cookie = document.cookie="username="+doctorUsername+"&fullname="+doctorFullname;
-    window.location.href = "../html/DrHome.html";
-}
-
-
 //Add prescription to patient
 function addPrescription(patientName, doctorName) {
     console.log("Add Prescription to Patient: " + patientName + " " + "Doctor: " + doctorName);
