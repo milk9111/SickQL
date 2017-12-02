@@ -177,7 +177,7 @@ function removeDoctor (patientUsername, doctorUsername) {
         if (this.readyState === 4 && this.status === 200) {
             var res = this.response;
             var result = JSON.parse(res);
-]            if (result['code'] == 100) {
+             if (result['code'] == 100) {
                 //After remove from database make sure to reload page to see difference
                 location.reload(true);
             } else {
