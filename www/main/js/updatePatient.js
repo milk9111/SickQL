@@ -1,6 +1,7 @@
 var dname = "";
 var dFname = "";
 var uname = "";
+var username = "";
 
 
 function startUp () {
@@ -9,19 +10,20 @@ function startUp () {
     var params = cookie.split(";");
     var uname = params[0].split("&");
 
-    var fullname = uname[1];
-    dname = uname[2];
-    dFname = uname[3];
-    var username = uname[0].substring(uname[0].indexOf("=")+1);
+    dname = uname[0].substring(uname[0].indexOf("=")+1);
+    dFname = uname[1];
+    username = uname[2];
+
+    console.log("dname: " + dname + "\n" + "dFname: " + dFname + "\n" + "username: " + username + "\n")
 }
 
 
-function updatePatientInfo(uname, height, weight, age) {
-    console.log("Updating " + uname);
+function updatePatientInfo(height, weight, age) {
+    console.log("Updating " + username);
 
     if (height.length > 0 && weight.length > 0 && age.length > 0) {
         var xhttp = new XMLHttpRequest();
-        xhttp.open("GET", "../php/updatePatient.php?patientName=" + uname + "&height=" + height + "&weight=" + weight + "&age=" + age, true);
+        xhttp.open("GET", "../php/updatePatient.php?patientName=" + username + "&height=" + height + "&weight=" + weight + "&age=" + age, true);
         xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 
         xhttp.onreadystatechange = function () {

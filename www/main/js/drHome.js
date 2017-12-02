@@ -115,8 +115,8 @@ function updatePatient(dname, dFname, patientName) {
 //Add prescription to patient
 function addPrescription(patientName, doctorName) {
 
-    document.cookie = "patientName=" + patientName;
-    document.cookie = "doctorName=" + doctorName;
+    //document.cookie = "patientName=" + patientName;
+    document.cookie = "username=" + doctorName + "&" + patientName + ";";
     console.log("Add Prescription to Patient: " + patientName + " " + "Doctor: " + doctorName);
     window.location.href = "../html/addPrescription.html";
 }

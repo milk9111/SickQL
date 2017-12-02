@@ -26,8 +26,12 @@ function getCookie(cname) {
 
 function startUp () {
 
-    doctorUserName = (getCookie("doctorName"));
-    patientUserName = (getCookie("patientName"));
+    var cookie = document.cookie;
+    var params = cookie.split(";");
+    var uname = params[0].split("&");
+    doctorUserName = uname[0].substring(uname[0].indexOf("=")+1);
+    patientUserName = uname[1];
+    console.log(doctorUserName + ", " + patientUserName);
 }
 
 

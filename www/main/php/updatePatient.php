@@ -13,7 +13,7 @@ $dsn = 'mysql:host=localhost;dbname=connorl2';
 $username = 'root';
 $password = '';
 
-$uname = $_GET['username'];
+$uname = $_GET['patientName'];
 $height = $_GET['height'];
 $weight = $_GET['weight'];
 $age = $_GET['age'];
