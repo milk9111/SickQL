@@ -120,3 +120,9 @@ function register (uname, fullname, pwd, confPwd) {
         }
     }
 }
+
+
+function signOut() {
+    document.cookie = "username=; expires=Thu, 01 Jan 1970 00:00:00 UTC;";
+    window.location.href="../html/home.html";
+}

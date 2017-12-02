@@ -1,3 +1,6 @@
+DROP DATABASE IF EXISTS connorl2;
+CREATE DATABASE connorl2;
+
 USE connorl2;
 
 -- Create Patient table
