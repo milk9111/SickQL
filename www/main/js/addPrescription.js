@@ -4,8 +4,9 @@
  * that was set on drHome.html and will be used to for the PHP file.
  */
 
-var doctorUserName;
-var patientUserName;
+var doctorUserName = "";
+var doctorFullName = "";
+var patientUserName = "";
 
 //Gets the cookie for cookie name provided
 function getCookie(cname) {
@@ -27,11 +28,12 @@ function getCookie(cname) {
 function startUp () {
 
     var cookie = document.cookie;
+    console.log(cookie);
     var params = cookie.split(";");
     var uname = params[0].split("&");
     doctorUserName = uname[0].substring(uname[0].indexOf("=")+1);
-    patientUserName = uname[1];
-    console.log(doctorUserName + ", " + patientUserName);
+    doctorFullName = uname[1];
+    patientUserName = uname[2];
 }
 
 
@@ -41,12 +43,25 @@ function submitPrescription(name, dose, cost, frequency, refill, manu) {
     //console.log("Submited: " + patientUserName + " " + doctorUserName + " " + name + " " + dose + " " + cost + " " + frequency + " " + refill + " " + manu);
 
     var xhttp = new XMLHttpRequest();
-    xhttp.open("GET", "../php/addPrescription.php?patientName="+patientUserName+"&prename="+name, true);
-    //xhttp.open("GET", "../php/addPrescription.php?patientName="+patientUserName+"&doctorName="+doctorUserName+"&dose="dose+"&cost="cost+"&freq="frequency+"&refill="refill+"&manu="manu, true);
+    //xhttp.open("GET", "../php/addPrescription.php?patientName="+patientUserName+"&prename="+name+"&dose=", true);
+    xhttp.open("GET", "../php/addPrescription.php?patientName="+patientUserName+"&prename="+name+"&dose="+dose+"&cost="+cost+"&freq="+frequency+"&refill="+refill+"&manu="+manu, true);
     xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    xhttp.onreadystatechange = function () {
+        if (this.readyState === 4 && this.status === 200) {
+            var res = this.response;
+            console.log(res);
+            var result = JSON.parse(res);
+
+            if (result['code'] == 100) {
+                window.location.href = "../html/DrHome.html";
+                document.cookie = "username=" + doctorUserName + "&" + doctorFullName + ";";
+            } else {
+                alert("Failed to remove the Patient from your list");
+            }
+        }
+    }
 
     xhttp.send();
-    window.location.href = "../html/drHome.html";
 }
 
 

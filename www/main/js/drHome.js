@@ -15,8 +15,8 @@ function startUp () {
     var params = cookie.split(";");
     var uname = params[0].split("&");
 
-    var fullname = uname[1];
-    var username = uname[0].substring(uname[0].indexOf("=")+1);
+    doctorFullname = uname[1];
+    doctorUsername = uname[0].substring(uname[0].indexOf("=")+1);
 
     /*if (uname.indexOf(";") < 0) {
         uname = uname.substring(0, uname.indexOf(";"));
@@ -28,9 +28,9 @@ function startUp () {
     }
     doctorFullname = fullname;*/
 
-    $('#name').text(fullname);
+    $('#name').text(doctorFullname);
 
-    makePatientTable (username, fullname);
+    makePatientTable (doctorUsername, doctorFullname);
 }
 
 
@@ -116,7 +116,7 @@ function updatePatient(dname, dFname, patientName) {
 function addPrescription(patientName, doctorName) {
 
     //document.cookie = "patientName=" + patientName;
-    document.cookie = "username=" + doctorName + "&" + patientName + ";";
+    document.cookie = "username=" + doctorName + "&" + doctorFullname + "&" + patientName + ";";
     console.log("Add Prescription to Patient: " + patientName + " " + "Doctor: " + doctorName);
     window.location.href = "../html/addPrescription.html";
 }

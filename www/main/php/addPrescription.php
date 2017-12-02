@@ -14,24 +14,24 @@ $username = 'root';
 $password = '';
 
 $uname = $_GET['patientName'];
-//$dname = $_POST['doctorName'];
 $prename = $_GET['prename'];
-//$dose = $_POST['dose'];
-//$cost = $_GET['cost'];
-//$freq = $_GET['freq'];
-//$refill = $_GET['refill'];
-//$manu = $_POST['manu'];
+$dose = $_GET['dose'];
+$cost = $_GET['cost'];
+$freq = $_GET['freq'];
+$refill = $_GET['refill'];
+$manu = $_GET['manu'];
 
-echo($uname);
+//echo($uname);
 
 try {
 
     $db = new PDO($dsn, $username, $password);
 
-    $select_sql = "";
+    $select_sql = "INSERT INTO Prescription (patientUsername, namePre, dose, cost, frequency, refillDate, manufacturer, active) VALUES
+                     (:uname, :prename, :dose, :cost, :freq, :refill, :manu, '1')";
     $sql = $db->prepare($select_sql);
 
-    $query = $sql->execute(array(":patientName"=>$patientName, ":dname"=>$dname));
+    $query = $sql->execute(array(":uname"=>$uname, ":prename"=>$prename, ":dose"=>$dose, ":cost"=>$cost, ":freq"=>$freq, ":refill"=>$refill, ":manu"=>$manu));
 
     if ($query) {
         $result = array("code"=>100, "message"=>"Success");
