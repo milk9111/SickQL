@@ -1,3 +1,5 @@
+
+///Global variables to be used through out drHome.js
 var patientToUpdate = "";
 var doctorUsername = "";
 var doctorFullname = "";
@@ -10,53 +12,56 @@ var doctorFullname = "";
  * webpage.
  */
 function startUp () {
+
+    //Get Cookie and split it by ';'
     var cookie = document.cookie;
-    console.log("the cookie is: " + document.cookie);
     var params = cookie.split(";");
     var uname = params[0].split("&");
 
+    //Doctor fullname and username
     doctorFullname = uname[1];
     doctorUsername = uname[0].substring(uname[0].indexOf("=")+1);
 
-    /*if (uname.indexOf(";") < 0) {
-        uname = uname.substring(0, uname.indexOf(";"));
-    }
-    doctorUsername = uname;
-    var fullname = params[1].substring(params[1].indexOf('=')+1);
-    if (fullname.indexOf(";") < 0) {
-        fullname = fullname.substring(0, fullname.indexOf(";"));
-    }
-    doctorFullname = fullname;*/
-
+    //Set the heading of the webpage to include the doctors name
     $('#name').text(doctorFullname);
 
+    //Make patient table to display to the doctor
     makePatientTable (doctorUsername, doctorFullname);
 }
 
-
+/*Makes a patient table
+* @param uname User name of doctor
+* @param fullname Full name of the doctor*/
 function makePatientTable (uname, fullname) {
+
+    //Start xhttpRequest to php file
     var xhttp = new XMLHttpRequest();
-    //xhttp.open("GET", "http://cssgate.insttech.washington.edu/~connorl2/home/main/php/login.php?username="+uname+"&password="+pwd, false);
-    //xhttp.open("GET", "localhost/SickQL/www/main/php/login.php?username="+uname+"&password="+pwd, false);
     xhttp.open("GET", "../php/getPatientsForDoctor.php?username="+uname, true);
     xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 
+    //Dispaly data if correct
     xhttp.onreadystatechange = function() {
         if (this.readyState === 4 && this.status === 200) {
+
+            //get JSON
             var res = this.response;
             var result = JSON.parse(res);
 
             if (result['code'] == 100) {
+
+                //Get patients and html for the table
                 var patients = result['patients'];
-                console.log(patients);
                 var html = $('#patients_table').html();
 
+                //Create the table
                 for (var i = 0; i < patients.length; i++) {
                     html += "<tr id='" + patients[i]['username'] + "'>";
                     html += "<td>" + patients[i]['fullname'] + "</td>";
                     html += "<td>" + patients[i]['height'] + "</td>";
                     html += "<td>" + patients[i]['weight'] + "</td>";
                     html += "<td>" + patients[i]['age'] + "</td>";
+
+                    //Buttons for manipulating data on patients
                     html += "<td><button type=\"button\" class=\"btn btn-default btn-sm\" onclick='addPrescription(" + "\"" + patients[i]['username'] + "\"" + ", " + "\"" + uname + "\"" +")' id=\"addPresBut\">\n" +
                         "                <span class=\"glyphicon glyphicon-plus\"></span> Add Prescription\n" +
                         "            </button></td>\n" +
@@ -67,8 +72,6 @@ function makePatientTable (uname, fullname) {
                         "                <span class=\"glyphicon glyphicon-minus\"></span> Remove Patient\n" +
                         "            </button></td>"
                     html += "</tr>";
-                    //var prev = $('#patients_table').html();
-                   // console.log(prev + html);
                 }
                 $('#patients_table tbody').replaceWith(html);
             }
@@ -78,10 +81,12 @@ function makePatientTable (uname, fullname) {
     xhttp.send();
 }
 
-//Remove the patient
+/*Remove the patient from doctors list
+* @paramdoctorUsername: Username for the doctor
+* @param patientName: Patient username to be removed*/
 function removePatient(doctorUsername, patientName) {
-    console.log("Remove Patient: " + patientName);
 
+    //Start xhttpRequest
     var xhttp = new XMLHttpRequest();
     xhttp.open("GET", "../php/removePatient.php?patientName="+patientName+"&doctorName="+doctorUsername, true);
     xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
@@ -90,10 +95,13 @@ function removePatient(doctorUsername, patientName) {
         if (this.readyState === 4 && this.status === 200) {
             var res = this.response;
             var result = JSON.parse(res);
-            console.log(result);
             if (result['code'] == 100) {
+
+                //Reload the page to display new results
                 location.reload(true);
             } else {
+
+                //If failed alert user to failure
                 alert("Failed to remove the Patient from your list");
             }
         }
@@ -101,27 +109,28 @@ function removePatient(doctorUsername, patientName) {
     xhttp.send();
 }
 
-//Update the patient information
+/*Update the patient information
+* dname: Doctors name
+* dFname: Doctors first name
+* patientName: Patient username*/
 function updatePatient(dname, dFname, patientName) {
-    console.log("Update Patient: " + patientName);
 
-    //document.cookie = "patientUsername=" + patientName;
     patientToUpdate = patientName;
     window.location.href = "../html/updatePatient.html";
     document.cookie = "username="+dname+"&"+dFname+"&"+patientName+";";
 }
 
 
-//Add prescription to patient
+/*Add prescription to patient
+* patientName: Patient username
+* doctorName: Doctor username*/
 function addPrescription(patientName, doctorName) {
 
-    //document.cookie = "patientName=" + patientName;
     document.cookie = "username=" + doctorName + "&" + doctorFullname + "&" + patientName + ";";
-    console.log("Add Prescription to Patient: " + patientName + " " + "Doctor: " + doctorName);
     window.location.href = "../html/addPrescription.html";
 }
 
-
+//Sigout a user
 function signOut() {
     document.cookie = "username=; expires=Thu, 01 Jan 1970 00:00:00 UTC;";
     window.location.href="../html/home.html";

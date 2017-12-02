@@ -12,8 +12,6 @@
 function login(uname, pwd) {
     if (uname.length <= 32 && pwd.length >= 5 && pwd.length <= 32) {
         var xhttp = new XMLHttpRequest();
-        //xhttp.open("GET", "http://cssgate.insttech.washington.edu/~connorl2/home/main/php/login.php?username="+uname+"&password="+pwd, false);
-        //xhttp.open("GET", "localhost/SickQL/www/main/php/login.php?username="+uname+"&password="+pwd, false);
         xhttp.open("GET", "../php/login.php?username="+uname+"&password="+pwd, true);
         xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 
@@ -22,17 +20,18 @@ function login(uname, pwd) {
                 var res = this.response;
                 var result = JSON.parse(res);
 
+                //If successful take to doctor home
                 if (result['code'] == 100) {
                     if (result['role'] === "Doctor") {
                         window.location.href = "../html/DrHome.html";
                         document.cookie="username="+uname+"&"+result['fullname']+";fullname="+result['fullname']+";";
-                        //return false;
                     } else {
+                        //if not a doctor must be a patient, take to patient home
                         window.location.href = "../html/PatientHome.html";
                         document.cookie="username="+uname+"&"+result['fullname']+";fullname="+result['fullname']+";";
-                        //return false;
                     }
                 } else {
+                    //Something went wrong and error
                     alert(result['message']);
                 }
             }
@@ -40,6 +39,7 @@ function login(uname, pwd) {
 
         xhttp.send();
     } else {
+        //Check input
         if (uname.length > 32 || uname.length < 5) {
             alert("Username must be between 5 and 32 characters");
         }
@@ -103,6 +103,8 @@ function register (uname, fullname, pwd, confPwd) {
 
         xhttp.send("username="+uname+"&fullname="+fullname+"&password="+pwd+"&type="+type);
     } else {
+
+        //Check if register information is correct
         if (uname.length > 32 || uname.length < 5) {
             alert("Username must be between 5 and 32 characters");
         }
@@ -121,7 +123,7 @@ function register (uname, fullname, pwd, confPwd) {
     }
 }
 
-
+//Sigout of profile
 function signOut() {
     document.cookie = "username=; expires=Thu, 01 Jan 1970 00:00:00 UTC;";
     window.location.href="../html/home.html";

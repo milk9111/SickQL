@@ -1,26 +1,36 @@
 
-/**
- * Called on start up of the webpage. It kicks off the whole thing by retrieving the cookie
- * that was set on drHome.html and will be used to for the PHP file.
- */
-
+//Global variables for use of document
 var doctorUserName = "";
 var doctorFullName = "";
 var patientUserName = "";
 
+
+/**
+ * Called on start up of the webpage. It kicks off the whole thing by retrieving the cookie
+ * that was set on drHome.html and will be used to for the PHP file.
+ */
 function startUp () {
 
+    //Get cookies
     var cookie = document.cookie;
-    console.log(cookie);
     var params = cookie.split(";");
     var uname = params[0].split("&");
+
+    //Fill in global variables
     doctorUserName = uname[0].substring(uname[0].indexOf("=")+1);
     doctorFullName = uname[1];
     patientUserName = uname[2];
 }
 
 
-//Add prescription to patient
+/*Add prescription to patient
+* @param name Name of prescription
+* @param dose Dose of prescription
+* @param cost Cost of prescription
+* @param frequency Frequency of prescription
+* @param refill Refill date for prescription
+* @param manu Manufactorer of prescription drug
+ */
 function submitPrescription(name, dose, cost, frequency, refill, manu) {
 
     //Check to make sure all fields are not empty
@@ -33,13 +43,14 @@ function submitPrescription(name, dose, cost, frequency, refill, manu) {
         xhttp.onreadystatechange = function () {
             if (this.readyState === 4 && this.status === 200) {
                 var res = this.response;
-                console.log(res);
                 var result = JSON.parse(res);
 
                 if (result['code'] == 100) {
+                    //go back to the DrHome.html as request was sent
                     window.location.href = "../html/DrHome.html";
                     document.cookie = "username=" + doctorUserName + "&" + doctorFullName + ";";
                 } else {
+                    //Alert doctor if something went wrong
                     alert("Failed to remove the Patient from your list");
                 }
             }
@@ -47,7 +58,6 @@ function submitPrescription(name, dose, cost, frequency, refill, manu) {
 
         xhttp.send();
     } else {
-        console.log("test2");
         //Make alerts
         if(name.length == 0) {
             alert("Prescription name can't be empty!");
@@ -71,13 +81,13 @@ function submitPrescription(name, dose, cost, frequency, refill, manu) {
 
 }
 
-
+//Cancels the creation of a prescription
 function cancel () {
     window.location.href = "../html/DrHome.html";
     document.cookie = "username="+dname+"&"+dFname+";";
 }
 
-
+//Signs out a user
 function signOut() {
     document.cookie = "username=; expires=Thu, 01 Jan 1970 00:00:00 UTC;";
     window.location.href="../html/home.html";

@@ -1,38 +1,51 @@
+
+//Gloabl variables used thorughout the document
+
+//Doctor username
 var dname = "";
+
+//Doctor full name
 var dFname = "";
+
+//patient user name for JSON object
 var uname = "";
+
+//Actual patient username
 var username = "";
 
-
+//Start when html file opens and get cookies and set global variables
 function startUp () {
     var cookie = document.cookie;
-    console.log("the cookie is: " + document.cookie);
     var params = cookie.split(";");
     var uname = params[0].split("&");
 
     dname = uname[0].substring(uname[0].indexOf("=")+1);
     dFname = uname[1];
     username = uname[2];
-
-    console.log("dname: " + dname + "\n" + "dFname: " + dFname + "\n" + "username: " + username + "\n")
 }
 
-
+/* Update the patient info
+* @param height Height of the patient
+* @param weight Weight of the patient
+* @param age Age of the patient
+ */
 function updatePatientInfo(height, weight, age) {
-    console.log("Updating " + username);
 
+    //Check that input is good
     if (height.length > 0 && weight.length > 0 && age.length > 0) {
         var xhttp = new XMLHttpRequest();
         xhttp.open("GET", "../php/updatePatient.php?patientName=" + username + "&height=" + height + "&weight=" + weight + "&age=" + age, true);
         xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 
         xhttp.onreadystatechange = function () {
+
+            //Check response
             if (this.readyState === 4 && this.status === 200) {
                 var res = this.response;
-                console.log(res);
                 var result = JSON.parse(res);
 
                 if (result['code'] == 100) {
+                    //If good go back to drHome.html and carry cookies over
                     window.location.href = "../html/DrHome.html";
                     document.cookie="username="+dname+"&"+dFname+";";
                 } else {
@@ -42,6 +55,7 @@ function updatePatientInfo(height, weight, age) {
         }
         xhttp.send();
     } else {
+        //Alert user to error
         if (height.length == 0) {
             alert("Must specify a height");
         }
@@ -54,13 +68,13 @@ function updatePatientInfo(height, weight, age) {
     }
 }
 
-
+//Cancels the page and goes back to drHome.html
 function cancel () {
     window.location.href = "../html/DrHome.html";
     document.cookie = "username="+dname+"&"+dFname+";";
 }
 
-
+//Sign out of profile
 function signOut() {
     document.cookie = "username=; expires=Thu, 01 Jan 1970 00:00:00 UTC;";
     window.location.href="../html/home.html";
