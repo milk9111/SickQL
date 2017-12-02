@@ -88,11 +88,11 @@ function register (uname, fullname, pwd, confPwd) {
                 if (result['code'] == 100) {
                     if (result['role'] === "Doctor") {
                         window.location.href = "../html/DrHome.html";
-                        document.cookie="username="+uname+"&"+result['fullname']+";fullname="+result['fullname']+";";
+                        document.cookie="username="+uname+"&"+fullname+";";
                         //return false;
                     } else {
                         window.location.href = "../html/PatientHome.html";
-                        document.cookie="username="+uname+"&"+result['fullname']+";fullname="+result['fullname']+";";
+                        document.cookie="username="+uname+"&"+fullname+";";
                         //return false;
                     }
                 } else {
