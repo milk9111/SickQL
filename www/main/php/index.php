@@ -1,9 +1,6 @@
 <?php
 /* ************************
- * This page will do one ofthe following:
- *   A. Send an unautorized user to the sign in page
- *   B. An authorized teacher to the teacher portal
- *   C. An authorized student to the student partal
+ * Created by Brandon Blaschke and Kevin Anderson
  */
 
 if(!isset($_SESSION)){

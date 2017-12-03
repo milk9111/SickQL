@@ -4,7 +4,7 @@
  * backend to verify account existence and correctness. This will return a JSON with either
  * an error message explaining what is wrong, or a success message and role type (Doctor or Patient).
  * If successful, this will move onto the next page, which is determined by role type.
- *
+ * Created by Connor Lundberg
  * @param uname
  * @param pwd
  * @author Connor

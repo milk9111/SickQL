@@ -1,4 +1,4 @@
-
+//Created by Brandon Blaschkke and Connor Lundberg
 //Global variables for use of document
 var doctorUserName = "";
 var doctorFullName = "";

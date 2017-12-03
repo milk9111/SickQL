@@ -2,7 +2,7 @@
 if(!isset($_SESSION)){
     session_start();
 }
-
+//Created by Connor Lundberg
 // SET $page_type = 'student','teacher','public'
 $page_type = 'teacher';
 require('inc.header.php');
@@ -50,8 +50,6 @@ $username = $row['username'];
 $userid   = $row['userid'];
 $name     = $row['preferred_name'];
 $email    = $row['email'];
-
-
 ?>
  
 <body>

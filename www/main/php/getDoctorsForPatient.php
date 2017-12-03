@@ -1,7 +1,7 @@
 <?php
 ini_set('display_errors', '1');
 error_reporting(E_ALL);
-
+//Created by Connor Lundberg and Morgan Blackmore
 //Connect to the CSSGate Database
 /*$dsn = 'mysql:host=cssgate.insttech.washington.edu;dbname=connorl2';
 $username = 'connorl2';
@@ -38,6 +38,7 @@ try {
     $i = 0;
     $broke = false;
     $query = $sql->fetchAll(PDO::FETCH_ASSOC);
+    //Build row for the patient that the doctor has
     foreach ($query as $arr) {
         if ($arr) {
             $doctors[$i] = array("username"=>$arr['username'], "fullname"=>$arr['fullname']);

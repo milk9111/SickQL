@@ -108,7 +108,7 @@ function removePatient(doctorUsername, patientName) {
     }
     xhttp.send();
 }
-
+//Created by Connor Lundberg and Brandon Blaschke
 /*Update the patient information
 * dname: Doctors name
 * dFname: Doctors first name

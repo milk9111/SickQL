@@ -1,7 +1,7 @@
 <?php
 ini_set('display_errors', '1');
 error_reporting(E_ALL);
-
+//Created by Connor Lundberg and Brandon Blaschke
 //Connect to the CSSGate Database
 /*$dsn = 'mysql:host=cssgate.insttech.washington.edu;dbname=connorl2';
 $username = 'connorl2';
@@ -32,6 +32,7 @@ try {
     $i = 0;
     $broke = false;
     $query = $sql->fetchAll(PDO::FETCH_ASSOC);
+    //Create a row for each available doctor
     foreach ($query as $arr) {
         if ($arr) {
             $doctors[$i] = array("username"=>$arr['username'], "fullname"=>$arr['fullname']);
@@ -52,6 +53,7 @@ try {
     $sql = null;
     $db = null;
 } catch (PDOException $e) {
+    //Error message if something goes wrong
     $error_message = $e->getMessage();
     $result = array("code"=>300, "message"=>"There was an error connecting to the database: $error_message");
     echo json_encode($result);

@@ -2,6 +2,7 @@
 ini_set('display_errors', '1');
 error_reporting(E_ALL);
 
+//Created by Connor Lundberg
 //Connect to the CSSGate Database
 /*$dsn = 'mysql:host=cssgate.insttech.washington.edu;dbname=connorl2';
 $username = 'connorl2';

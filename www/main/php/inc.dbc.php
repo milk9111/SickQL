@@ -1,5 +1,5 @@
 <?php
-
+    //Created by Connor Lundberg
     function get_connection() {
         $userid   = 'connorl2';
         $password = 'yandyu';

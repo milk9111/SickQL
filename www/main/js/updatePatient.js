@@ -1,6 +1,5 @@
-
+//Created by Connor Lundberg
 //Gloabl variables used thorughout the document
-
 //Doctor username
 var dname = "";
 

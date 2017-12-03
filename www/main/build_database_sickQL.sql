@@ -1,3 +1,4 @@
+-- Created By Brandon Blaschke, Morgan Blackmore and Connor Lundberg
 DROP DATABASE IF EXISTS connorl2;
 CREATE DATABASE connorl2;
 

@@ -1,7 +1,7 @@
 <?php
 ini_set('display_errors', '1');
 error_reporting(E_ALL);
-
+//Craeted by Connor Lundberg and Morgan Blackmore
 //Connect to the CSSGate Database
 /*$dsn = 'mysql:host=cssgate.insttech.washington.edu;dbname=connorl2';
 $username = 'connorl2';
@@ -12,10 +12,13 @@ $dsn = 'mysql:host=localhost;dbname=connorl2';
 $username = 'root';
 $password = '';
 
+//Get variables from JS file for when patient registers
 $uname = $_POST['username'];
 $fullname = $_POST['fullname'];
 $pwd = $_POST['password'];
 $type = $_POST['type'];
+
+//Connect to the database
 try {
 
     $db = new PDO($dsn, $username, $password);
@@ -27,8 +30,8 @@ try {
         $select_sql = "SELECT password FROM `Patient` WHERE username = '" . $uname . "'";
         $isDoctor = false;
     }
-    //$select_sql = "SELECT password FROM $type WHERE email = '" . $uname . "'";
-    //echo $select_sql;
+
+    //Create query
     $user_query = $db->query($select_sql);
 
     $currPwd = $user_query->fetchAll(PDO::FETCH_ASSOC);
@@ -73,6 +76,7 @@ try {
     $user_query = null;
     $db = null;
 } catch (PDOException $e) {
+    //Send error message if something went wrong
     $error_message = $e->getMessage();
     $result = array("code"=>300, "message"=>"Unable to sign in. There was an error connecting to the database: $error_message");
     echo json_encode($result);

@@ -4,6 +4,8 @@
  *
  * This will then make all of the tables that are used by the Patient and show them on the
  * webpage.
+ *
+ * Created By Connor
  */
 function startUp () {
 
